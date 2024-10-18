@@ -50,11 +50,12 @@
 \usepackage[scaled]{helvet}
 \usepackage{nopageno}
 \usepackage{fontawesome5}
+\usepackage{academicons}
 \usepackage[defaultfam,tabular,oldstyle]{montserrat}
 \usepackage[T1]{fontenc}
 %\usepackage{afterpage}
 \renewcommand*\oldstylenums[1]{{\fontfamily{Montserrat-TOsF}\selectfont #1}}
-
+\usepackage{graphicx}
 \usepackage{titlesec}
 \usepackage{xcolor}
 \usepackage{tikz}
@@ -122,7 +123,7 @@
         \\
         \begin{center}
             \begin{tikzpicture}
-            \clip (0,0) circle (3cm) node[anchor=center] {\includegraphics[width=6cm]{portait_template.jpg}}; 
+            \clip (0,0) circle (3cm) node[anchor=center] {\includegraphics[width=6cm]{portait_template.jpg}};
             \end{tikzpicture}
         \end{center}
         \vspace{.3cm}
@@ -132,9 +133,10 @@
         \addcontentsline{toc}{section}{Personal info}
         \section*{\Large Kontakte}
         \begin{tabularx}{\textwidth}{cY}
-            \faPhone{}      & +49 176 703 552 53 \\
+            \faPhone{}      & \href{tel:+49 176 703 552 53}{+49 176 703 552 53} \\
+            \faSkype{}      & \href{skype:Morteza Montahaee?chat}{Morteza Montahaee} \\
             \faEnvelope{}   & \href{mailto:morteza.montahaee@rwth-aachen.de}{morteza.montahaee@outlook.com} \\
-            \faMapMarker{}  & Ottostr. 19, 52070 Aachen \\
+            \faMapMarker{}  & \href{https://www.bing.com/maps?q=Otto+str+19+aachen\&FORM=AWRE}{Ottostr. 19, 52070 Aachen} \\
         \end{tabularx}
         \vspace{.3cm} \\
         \rule{\linewidth}{0.4pt} \\
@@ -158,13 +160,14 @@
         \phantomsection{}
         \addcontentsline{toc}{section}{Skills}
         \section*{\large Skills}
+
         \begin{tabularx}{\textwidth}{cY}
-            \faCode{}        & C++, C, Python, Bash, PHP, Javascript, C\#, Java, Kotlin, MySQL, PostgreSQL, Visual Basic, R \\
-            \faPen*{}        & \LaTeX, Liquid, HTML, CSS \\
-            \faFont{}        & \{MS, Libre, GSuite\} Office, Adobe Acrobat \\
-            \faCogs{}        & Linux, Windows, macOS \\
-            \faLaptopCode{}  & IDE 1, IDE 2, IDE 3 \\
-            \faToolbox{}     & Tool 1, Tool 2 
+            \faCode{}        & C++, C, Python, Bash, PHP, Javascript, C\#, Java, MariaDB, MySQL, Visual Basic \\
+            \faPen*{}        & \LaTeX, Liquid, HTML, CSS, SHACL \\
+            \faFont{}        & \{MS, Libre\} Office, Vim, PDF-XChange,  Adobe Acrobat \\
+            \faCogs{}        & Dual (Windows, Linux) \\
+            \faLaptopCode{}  & IntelliJ, Rider, Visual Studio/Code, PyCharm,  CLion, DataGrip, MATLAB\\
+            \faToolbox{}     & Docker, Enterprise Architect, Git
         \end{tabularx}
         \vspace{1pt} \\
         \rule{\linewidth}{0.4pt}
@@ -173,6 +176,21 @@
         % are different. You should at least provide, what the best possible
         % grade and what the worst possible grade is)
         \vfill
+        \begin{center}
+            \begin{tikzpicture}
+                % Low-level
+                \draw[fill=blue] (0,0) circle (0.75ex);
+                \node[right] at (0.5,0) {\footnotesize Grundkenntnisse};
+
+                % Mid-level
+                \draw[fill=yellow] (3.75,0) circle (0.75ex);
+                \node[right] at (4.25,0) {\footnotesize Gut};
+
+                % High-level
+                \draw[fill=red] (5.5,0) circle (0.75ex);
+                \node[right] at (6.00,0) {\footnotesize Sehr Gut};
+            \end{tikzpicture}
+        \end{center}
         {\tiny Grade scale: (1) very good $\approx$91\%-100\%, (2) good $\approx$81\%-90\%, (3) satisfactory $\approx$66\%-80\%, (4) sufficient $\approx$50\%-65\%, (5) failed $\approx$0\%-49\%}
     \end{minipage}
 }
@@ -180,53 +198,6 @@
 \fcolorbox{red}{mainbg}{%
     \begin{minipage}[t][\dimexpr\textheight-2\fboxrule-2\fboxsep\relax][t]{\dimexpr0.6\textwidth-2\fboxrule-2\fboxsep\relax}
         \color{maintext}
-        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-        % WORK EXPERIENCE
-        \phantomsection{}
-        \addcontentsline{toc}{section}{Work Experience}
-        \section*{\scshape\Large Work Experience \rule{\linewidth}{0.4pt}}
-%
-        {\large \textbf{United Staats Government}} \\ 
-        {{\fontseries{medium}\selectfont Full-time, President}} \\
-        {\scshape\fontseries{light}\selectfont\footnotesize Jan 2016 \textendash{} Nov 2020} 
-        \begin{itemize}
-            \setlength{\itemsep}{-3pt}
-            \item Do stuff
-            \begin{itemize}
-                \item That included Stuff
-                \item and more Stuff
-            \end{itemize}
-            \item Other Task
-        \end{itemize}
-%
-        {\large \textbf{McKienze Ltd}} \\
-        {{\fontseries{medium}\selectfont Part-time, Thieve}} \\
-        {\scshape\fontseries{light}\selectfont\footnotesize Oct 2013 \textendash{} Nov 2016} 
-        \begin{itemize}
-            \setlength{\itemsep}{-3pt}
-            \item Do stuff
-            \begin{itemize}
-                \item That included Stuff
-                \item and more Stuff
-            \end{itemize}
-            \item Other Task
-            \begin{itemize}
-                \item That included more Stuff
-                \item and other more different Stuff
-            \end{itemize}
-            \item tellus elementum sagittis vitae et
-            \item aliquam sem et tortor consequat
-            \item ullamcorper velit sed ullamcorper morbi tincidunt
-            \item rhoncus est pellentesque elit ullamcorper dignissim
-        \end{itemize}
-%
-        {\large \textbf{ACME Corp}}\\
-        {{\fontseries{medium}\selectfont Traineeship, Occupation}}\\
-        {\scshape\fontseries{light}\selectfont\footnotesize Aug 2010 \textendash{} Oct 2013} 
-        \begin{itemize}
-            \setlength{\itemsep}{-4pt}
-            \item massa tempor nec feugiat nisl pretium fusce id
-        \end{itemize}
         %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
         % EDUCATION
         \phantomsection{}
@@ -253,11 +224,59 @@
         {Degree: Secondary school leaving certificate} \\[1ex]
         {Grade: 2.5} \\[1ex]
         {\footnotesize Elective Courses: Chemistry, Engineering, Art} \\
-        % \\
+         \vspace{+7pt}
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        % WORK EXPERIENCE
+        \phantomsection{}
+        \addcontentsline{toc}{section}{Work Experience}
+        \section*{\scshape\Large Work Experience \rule{\linewidth}{0.4pt}}
+%
+        {\large \textbf{United Staats Government}} \\
+        {{\fontseries{medium}\selectfont Full-time, President}} \\
+        \faCalendar {} {\scshape\fontseries{light}\selectfont\footnotesize Jan 2016 \textendash{} Nov 2020}
+        \begin{itemize}
+            \setlength{\itemsep}{-3pt}
+            \item Do stuff
+            \begin{itemize}
+                \item That included Stuff
+                \item and more Stuff
+            \end{itemize}
+            \item Other Task
+        \end{itemize}
+%
+        {\large \textbf{McKienze Ltd}} \\
+        {{\fontseries{medium}\selectfont Part-time, Thieve}} \\
+        {\scshape\fontseries{light}\selectfont\footnotesize Oct 2013 \textendash{} Nov 2016}
+        \begin{itemize}
+            \setlength{\itemsep}{-3pt}
+            \item Do stuff
+            \begin{itemize}
+                \item That included Stuff
+                \item and more Stuff
+            \end{itemize}
+            \item Other Task
+            \begin{itemize}
+                \item That included more Stuff
+                \item and other more different Stuff
+            \end{itemize}
+            \item tellus elementum sagittis vitae et
+            \item aliquam sem et tortor consequat
+            \item ullamcorper velit sed ullamcorper morbi tincidunt
+            \item rhoncus est pellentesque elit ullamcorper dignissim
+        \end{itemize}
+%
+        {\large \textbf{ACME Corp}}\\
+        {{\fontseries{medium}\selectfont Traineeship, Occupation}}\\
+        {\scshape\fontseries{light}\selectfont\footnotesize Aug 2010 \textendash{} Oct 2013}
+        \begin{itemize}
+            \setlength{\itemsep}{-4pt}
+            \item massa tempor nec feugiat nisl pretium fusce id
+        \end{itemize}
         \vfill%
         {\hfill\small\fontseries{extralight}\selectfont Page \thepage of \pageref{LastPage}\hfill}
     \end{minipage}
 }%
+
 \newpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % PAGE 2
