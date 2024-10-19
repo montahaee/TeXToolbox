@@ -24,7 +24,7 @@
 %
 %
 % !TEX program = XeLaTeX
-\documentclass[twoside]{article}
+\documentclass[onside]{article}
 
 \usepackage{wallpaper}
 \usepackage{geometry}
@@ -46,13 +46,17 @@
 \usepackage{moresize}
 \usepackage[document]{ragged2e}
 % \usepackage{parskip}
-
 \usepackage[scaled]{helvet}
 \usepackage{nopageno}
 \usepackage{fontawesome5}
+\usepackage{fontawesome}
 \usepackage{academicons}
 \usepackage[defaultfam,tabular,oldstyle]{montserrat}
 \usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[english,german]{babel}
+%\usepackage{lmodern}
+
 %\usepackage{afterpage}
 \renewcommand*\oldstylenums[1]{{\fontfamily{Montserrat-TOsF}\selectfont #1}}
 \usepackage{graphicx}
@@ -60,6 +64,7 @@
 \usepackage{xcolor}
 \usepackage{tikz}
 \usepackage{color}
+\usepackage{amsmath}
 
 \setlength{\parindent}{0pt}
 \titleformat{\section}{\normalfont}{}{0pt}{}
@@ -107,6 +112,34 @@
 
 \pagecolor{mainbg}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Your newcommand
+\newcommand{\cvevent}[5]{
+        {\scshape\fontseries{light}\selectfont\footnotesize \faMapMarker{} #1 \qquad{} \faCalendar{} #2 \textendash{} #3} \\
+}
+\renewcommand{\cvevent}[6]{
+%    \begin{tabularx}{\linewidth}{@{}X@{\hspace{-2.5cm}}r@{}}
+    \begin{tabularx}{\linewidth}{@{}l@{\hspace{#6}}Xr@{}}
+    {\scshape\fontseries{light}\selectfont\footnotesize \scalebox{1.144}{\faMapMarker}{} #1} & {\scshape\fontseries{light}\selectfont\footnotesize \faCalendar{} #2 \textendash{} #3} \\
+    {{#4:} & {#5}} \\[1ex]
+    \end{tabularx}
+}
+
+\newcommand{\betiny}{\fontsize{6pt}{7pt}\selectfont}
+
+\newcommand{\externallink}[2]{
+    \href{#1}{\scalebox{#2}{\faExternalLink}}
+}
+
+\renewcommand{\externallink}[3]{%
+    \ifthenelse{\equal{#3}{true}}{%
+    % Superscript (raised) version
+        \href{#1}{$^{\scalebox{#2}{\faExternalLink}}$}%
+    }{%
+    % Normal version
+        \href{#1}{\scalebox{#2}{\faExternalLink}}%
+    }%
+}
 
 \begin{document}
 \setlength{\topskip}{0pt}\setlength{\footskip}{0pt}%
@@ -136,7 +169,7 @@
             \faPhone{}      & \href{tel:+49 176 703 552 53}{+49 176 703 552 53} \\
             \faSkype{}      & \href{skype:Morteza Montahaee?chat}{Morteza Montahaee} \\
             \faEnvelope{}   & \href{mailto:morteza.montahaee@rwth-aachen.de}{morteza.montahaee@outlook.com} \\
-            \faMapMarker{}  & \href{https://www.bing.com/maps?q=Otto+str+19+aachen\&FORM=AWRE}{Ottostr. 19, 52070 Aachen} \\
+            \scalebox{1.144}{\faMapMarker}{}  & \href{https://www.bing.com/maps?q=Otto+str+19+aachen\&FORM=AWRE}{Ottostr. 19, 52070 Aachen} \\
         \end{tabularx}
         \vspace{.3cm} \\
         \rule{\linewidth}{0.4pt} \\
@@ -176,22 +209,40 @@
         % are different. You should at least provide, what the best possible
         % grade and what the worst possible grade is)
         \vfill
-        \begin{center}
+%        \begin{center}
+%            \begin{tikzpicture}
+%                % Low-level
+%                \draw[fill=blue] (0,0) circle (0.75ex);
+%                \node[right] at (0.5,0) {\footnotesize Grundkenntnisse};
+%
+%                % Mid-level
+%                \draw[fill=yellow] (3.75,0) circle (0.75ex);
+%                \node[right] at (4.25,0) {\footnotesize Gut};
+%
+%                % High-level
+%                \draw[fill=red] (5.5,0) circle (0.75ex);
+%                \node[right] at (6.00,0) {\footnotesize Sehr Gut};
+%            \end{tikzpicture}
             \begin{tikzpicture}
                 % Low-level
                 \draw[fill=blue] (0,0) circle (0.75ex);
-                \node[right] at (0.5,0) {\footnotesize Grundkenntnisse};
+                \node[left] at (-0.25,0) {\betiny Gut};
 
                 % Mid-level
-                \draw[fill=yellow] (3.75,0) circle (0.75ex);
-                \node[right] at (4.25,0) {\footnotesize Gut};
+                \draw[fill=yellow] (0.5,1.0) circle (0.75ex);
+                \node[right] at (0.75,1.0) {\betiny Sehr Gut};
 
                 % High-level
-                \draw[fill=red] (5.5,0) circle (0.75ex);
-                \node[right] at (6.00,0) {\footnotesize Sehr Gut};
+                \draw[fill=red] (1.0,0) circle (0.75ex);
+                \node[right] at (1.25,0) {\betiny Grundkenntnisse};
             \end{tikzpicture}
+%        \end{center}
+%        {\tiny GPA: (1) very good $\approx$91\%-100\%, (2) good $\approx$81\%-90\%, (3) satisfactory $\approx$66\%-80\%, (4) sufficient $\approx$50\%-65\%, (5) failed $\approx$0\%-49\%}
+        \begin{center}
+            {\tiny GPA: (18-20) sehr gut $\approx$90\%-100\%, (15-17) gut $\approx$80\%-89\%, (12-14) befriedigend $\approx$70\%-79\%, (10-12) ausreichend $\approx$60\%-69\%, (0-9) mangelhaft $\approx$0\%-59\%}
+%            \href{https://en.wikipedia.org/wiki/Academic_grading_in_Iran}{\scalebox{0.72}{\faExternalLink}}
+            \externallink{https://en.wikipedia.org/wiki/Academic_grading_in_Iran}{0.72}{false}
         \end{center}
-        {\tiny Grade scale: (1) very good $\approx$91\%-100\%, (2) good $\approx$81\%-90\%, (3) satisfactory $\approx$66\%-80\%, (4) sufficient $\approx$50\%-65\%, (5) failed $\approx$0\%-49\%}
     \end{minipage}
 }
 \hfill
@@ -202,38 +253,52 @@
         % EDUCATION
         \phantomsection{}
         \addcontentsline{toc}{section}{Education}
-        \section*{\scshape\Large Education \rule{\linewidth}{0.4pt}}
+        \section*{\scshape\Large Ausbildung \rule{\linewidth}{0.4pt}}
 %
-        {\large \textbf{Management \& Business Administration, Sample University\\ (Graduate Degree)}} \\
-        {\scshape\fontseries{light}\selectfont\footnotesize Springfield \qquad Oct 2013 \textendash{} Nov 2016} \\
-        {Degree: Diploma of Business} \\[1ex]
-        {Grade: 2.6} \\[1ex]
-        {\footnotesize Subsidiary subject: Psychology} \\
-        {\footnotesize In-depth study: Thievery} \\
-        {\footnotesize Thesis subject: ultrices gravida dictum fusce} \\[2ex]
+        {\large \textbf{Angewandte Mathematik und Informatik (\href{https://montahaee.github.io/assets/pdf/de/apply/Abschlussbescheinigung.pdf}{\textcolor{cyan!60!black}{\fontsize{11.5pt}{13pt}\selectfont Abschluss}})}} \\
+        \faUniversity{} FH Aachen, University of Applied Sciences \\
+%        {\scshape\fontseries{light}\selectfont\footnotesize \faMapMarker{} Jülich \qquad{} \faCalendar{} Okt 2019 \textendash{} Sep 2024} \\
+        \cvevent{Jülich}{Okt 2019}{Sep 2024}
+%        {\href{https://montahaee.github.io/assets/pdf/de/apply/Abschlussbescheinigung.pdf}{\textcolor{cyan!70!black}{Studiengang}}: Bachelor of Science} \\[1ex]
+        {Studiengang}{Bachelor of Science}{.1cm}
+        {Note: 2.7} \\[1ex]
+%        {\footnotesize Subsidiary subject: Psychology} \\
+        {\footnotesize Schwerpunkt: Analysis, Lineare Algebra, Stochastik, Numerik, Algorithmen und Datenstrukturen, Data Science, Datenbanken, Softwaretechnik} \\
+        {\footnotesize \href{https://montahaee.github.io/assets/pdf/de/projects/myFH_Bachelorthesis.pdf}{\textcolor{cyan!70!black}{Bachelorarbeit}}: Datengetriebene äu\ss{}ere Differentialrechnung auf Graphen zur Diskretisierung von elliptischen partiellen Differentialgleichungen} \\[2ex]
 
-        {\large \textbf{Potenti nullam \textendash{} sodales ut, Some School\\ (Professional Training with A-Levels)}} \\
-        {\scshape\fontseries{light}\selectfont\footnotesize Miami \qquad Sep 2010 \textendash{} Sep 2013} \\
-        {Degrees: Potenti nullam \& A-Levels\\ (General higher education entrance qualification)} \\[1ex]
-        {Vocational Grades: interdisciplinary 1.7, subject-specific 1.1} \\
-        {Grammar School Grade: 3.4} \\[1ex]
-        {\footnotesize Project subject: sit amet nulla facilisi} \\[2ex]
+        {\large \textbf{Mathematik (Ohne Abschluss)}} \\
+        \faUniversity{} RWTH University \\
+        \cvevent{Aachen}{Okt 2012}{Okt 2016}
+        {Studiengang}{Master of Science}{.1cm}
+%        {Vocational Grades: interdisciplinary 1.7, subject-specific 1.1} \\
+%        {Grammar School Note: 3.4} \\[1ex]
+        {\footnotesize Abgschlossene Module: \href{https://montahaee.github.io/assets/pdf/de/apply/bild\_verarbeitung\_zeugnis.pdf}{\textcolor{cyan!70!black}{Bildverarbeitung}}, \href{https://montahaee.github.io/assets/pdf/de/apply/neuro_science.pdf}{\textcolor{cyan!70!black}{Neuroscience}}, Numerik (PDE),
+            \href{https://montahaee.github.io/assets/pdf/de/apply/optimierungc_zeugnis.pdf}{\textcolor{cyan!70!black}{Optimierungstheorie}}, Variationsrechnung} \\[2ex]
 
-        {\large \textbf{School Education, Middle school}} \\
-        {\scshape\fontseries{light}\selectfont\footnotesize New York \qquad Sep 2005 \textendash{} Jun 2010} \\
-        {Degree: Secondary school leaving certificate} \\[1ex]
-        {Grade: 2.5} \\[1ex]
-        {\footnotesize Elective Courses: Chemistry, Engineering, Art} \\
+        {\large \textbf{Spracherwerb}} \\
+        \faUniversity{} Sprachenzentrum der RWTH \\
+%        {\scshape\fontseries{light}\selectfont\footnotesize New York \qquad Sep 2005 \textendash{} Jun 2010} \\
+        \cvevent{Aachen}{Apr 2011}{Jun 2012}{Abschluss}{\href{https://de.wikipedia.org/wiki/Deutsche_Sprachpr\%C3\%BCfung_f\%C3\%BCr_den_Hochschulzugang}{\textcolor{cyan!70!black}{DSH}}}{.575cm}
+%        {Degree: Secondary school leaving certificate} \\[1ex]
+        {Note: \href{https://montahaee.github.io/assets/pdf/de/apply/sprach_zeugnis.pdf}{\textcolor{cyan!70!black}{Stufe II}}} \\[1ex]
+%        {\footnotesize Elective Courses: Chemistry, Engineering, Art} \\
+
+        {\large \textbf{Angewandte Mathematik (\href{https://montahaee.github.io/assets/pdf/en/apply/bsc_degree.pdf}{\textcolor{cyan!60!black}{Abschluss}})}} \\
+        \faUniversity{} \href{https://en.wikipedia.org/wiki/Payame_Noor_University}{\textcolor{green!30!black}{Payame Noor}} University \externallink{https://en.wikipedia.org/wiki/Payame_Noor_University}{0.52}{true}
+        \cvevent{Pakdasht}{Okt 2005}{Jul 2009}{Studiengang}{Bachelor of Science}{.1cm}
+        {Note: 15.54} \\[1ex]
+        {\footnotesize Schwerpunkt: Lineare/ Algebra, Numerische (ODE) und Mathematische Analysis, Mathematische Statistik, Graphentheorie, Mathematische Modelle der Natur (ODE)} \\
+        {\footnotesize Bachelorarbeit: Anwendung Nichtlinear Konjugierte Gradient-Algorithmen zur Abschätzung elektromagnetischer Inversion} \\[2ex]
          \vspace{+7pt}
         %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
         % WORK EXPERIENCE
         \phantomsection{}
         \addcontentsline{toc}{section}{Work Experience}
-        \section*{\scshape\Large Work Experience \rule{\linewidth}{0.4pt}}
+        \section*{\scshape\Large Berufliche Erfahrung \rule{\linewidth}{0.4pt}}
 %
-        {\large \textbf{United Staats Government}} \\
-        {{\fontseries{medium}\selectfont Full-time, President}} \\
-        \faCalendar {} {\scshape\fontseries{light}\selectfont\footnotesize Jan 2016 \textendash{} Nov 2020}
+        \faUniversity{} {\large \textbf{\href{https://dap-aachen.de/}{\textcolor{green!30!black}{DAP}} RWTH \externallink{https://dap-aachen.de/}{0.63}{true}}} \\
+        {{\fontseries{medium}\selectfont Vollzeit, MASE-Azubi \externallink{https://de.wikipedia.org/wiki/Mathematisch-technischer_Softwareentwickler}{0.72}{true}}} \\
+        \faCalendar {} {\scshape\fontseries{light}\selectfont\footnotesize Okt 2019 \textendash{} Aug 2023}
         \begin{itemize}
             \setlength{\itemsep}{-3pt}
             \item Do stuff
