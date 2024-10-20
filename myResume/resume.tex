@@ -116,15 +116,22 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Your newcommands
-\newcommand{\cvevent}[5]{
+\newcommand{\eduevent}[5]{
         {\scshape\fontseries{light}\selectfont\footnotesize \faMapMarker{} #1 \qquad{} \faCalendar{} #2 \textendash{} #3} \\
 }
-\renewcommand{\cvevent}[6]{
+\renewcommand{\eduevent}[6]{
 %    \begin{tabularx}{\linewidth}{@{}X@{\hspace{-2.5cm}}r@{}}
     \begin{tabularx}{\linewidth}{@{}l@{\hspace{#6}}Xr@{}}
     {\scshape\fontseries{light}\selectfont\footnotesize \scalebox{1.144}{\faMapMarker}{} #1} & {\scshape\fontseries{light}\selectfont\footnotesize \faCalendar{} #2 \textendash{} #3} \\
     {{#4:} & {#5}} \\[1ex]
     \end{tabularx}
+}
+
+\newcommand{\jobevent}[5]{%
+    \begin{tabularx}{\linewidth}{@{}l@{\hspace{#5}}Xr@{}}%
+    {\scshape\fontseries{light}\selectfont\footnotesize \scalebox{1.144}{\faMapMarker}{} #1} & {\scshape\fontseries{light}\selectfont\footnotesize \faCalendar{} #2 \textendash{} #3} \\
+    {#4} \\[1ex]%
+    \end{tabularx}%
 }
 
 \newcommand{\betiny}{\fontsize{6pt}{7pt}\selectfont}
@@ -283,12 +290,12 @@
         % EDUCATION
         \phantomsection{}
         \addcontentsline{toc}{section}{Education}
-        \section*{\scshape\Large Ausbildung \rule{\linewidth}{0.4pt}}
+        \section*{\scshape\Large Ausbildung \rule{\linewidth}{0.4pt}} \vspace{-3pt}
 %
-        {\large \textbf{Angewandte Mathematik und Informatik (\href{https://montahaee.github.io/assets/pdf/de/apply/Abschlussbescheinigung.pdf}{\textcolor{cyan!60!black}{\fontsize{11.5pt}{13pt}\selectfont Abschluss}})}} \\
+        {\large \textbf{Angewandte Mathematik und Informatik (\href{https://montahaee.github.io/assets/pdf/de/apply/Abschlussbescheinigung.pdf}{\textcolor{cyan!60!black}{\fontsize{11.15pt}{13pt}\selectfont Abschluss{\externallink{}{0.62}{1.25}{-0.43}{10}}}})}} \\[1ex]
         \faUniversity{} FH Aachen, University of Applied Sciences \\
 %        {\scshape\fontseries{light}\selectfont\footnotesize \faMapMarker{} Jülich \qquad{} \faCalendar{} Okt 2019 \textendash{} Sep 2024} \\
-        \cvevent{Jülich}{Okt 2019}{Sep 2024}
+        \eduevent{Jülich}{Okt 2019}{Sep 2024}
 %        {\href{https://montahaee.github.io/assets/pdf/de/apply/Abschlussbescheinigung.pdf}{\textcolor{cyan!70!black}{Studiengang}}: Bachelor of Science} \\[1ex]
         {Studiengang}{Bachelor of Science}{.1cm}
         {Note: 2.7} \\[1ex]
@@ -296,54 +303,54 @@
         {\footnotesize Schwerpunkt: Analysis, Lineare Algebra, Stochastik, Numerik, Algorithmen und Datenstrukturen, Data Science, Datenbanken, Softwaretechnik} \\
         {\footnotesize \href{https://montahaee.github.io/assets/pdf/de/projects/myFH_Bachelorthesis.pdf}{\textcolor{cyan!70!black}{Bachelorarbeit}}: Datengetriebene äu\ss{}ere Differentialrechnung auf Graphen zur Diskretisierung von elliptischen partiellen Differentialgleichungen} \\[2ex]
 
-        {\large \textbf{Mathematik (Ohne Abschluss)}} \\
+        {\large \textbf{Mathematik (Ohne Abschluss)}} \\[1ex]
         \faUniversity{} RWTH University \\
-        \cvevent{Aachen}{Okt 2012}{Okt 2016}
-        {Studiengang}{Master of Science}{.1cm}
-%        {Vocational Grades: interdisciplinary 1.7, subject-specific 1.1} \\
-%        {Grammar School Note: 3.4} \\[1ex]
-        {\footnotesize Abgschlossene Module: \href{https://montahaee.github.io/assets/pdf/de/apply/bild\_verarbeitung\_zeugnis.pdf}{\textcolor{cyan!70!black}{Bildverarbeitung}}, \href{https://montahaee.github.io/assets/pdf/de/apply/neuro_science.pdf}{\textcolor{cyan!70!black}{Neuroscience}}, Numerik (PDE),
-            \href{https://montahaee.github.io/assets/pdf/de/apply/optimierungc_zeugnis.pdf}{\textcolor{cyan!70!black}{Optimierungstheorie}}, Variationsrechnung} \\[2ex]
-
-        {\large \textbf{Spracherwerb}} \\
+        \eduevent{Aachen}{Okt 2012}{Okt 2016}
+        {Studiengang}{Master of Science}{.1cm}  \vspace{-10pt}
+        {} \\
+        {\footnotesize Abgschlossene Module: \href{https://montahaee.github.io/assets/pdf/de/apply/bild\_verarbeitung\_zeugnis.pdf}{\textcolor{cyan!70!black}{Bildverarbeitung{\externallink{}{0.62}{1.25}{-0.33}{10}}}}, \href{https://montahaee.github.io/assets/pdf/de/apply/neuro_science.pdf}{\textcolor{cyan!70!black}{Neuroscience{\externallink{}{0.62}{1.25}{-0.33}{10}}}}, Numerik (PDE),
+            \href{https://montahaee.github.io/assets/pdf/de/apply/optimierungc_zeugnis.pdf}{\textcolor{cyan!70!black}{Optimierungstheorie{\externallink{}{0.62}{-0.25}{-0.33}{-80}}}}, Variationsrechnung} \\[1ex]
+        {\large \textbf{Spracherwerb}} \\[1ex]
         \faUniversity{} Sprachenzentrum der RWTH \\
 %        {\scshape\fontseries{light}\selectfont\footnotesize New York \qquad Sep 2005 \textendash{} Jun 2010} \\
-        \cvevent{Aachen}{Apr 2011}{Jun 2012}{Abschluss}{\href{https://de.wikipedia.org/wiki/Deutsche_Sprachpr\%C3\%BCfung_f\%C3\%BCr_den_Hochschulzugang}{\textcolor{cyan!70!black}{DSH}}}{.575cm}
+        \eduevent{Aachen}{Apr 2011}{Jun 2012}{Abschluss}{\href{https://de.wikipedia.org/wiki/Deutsche_Sprachpr\%C3\%BCfung_f\%C3\%BCr_den_Hochschulzugang}{\textcolor{cyan!70!black}{DSH{\externallink{}{0.62}{.75}{0.08}{10}}}}}{.575cm}
 %        {Degree: Secondary school leaving certificate} \\[1ex]
-        {Note: \href{https://montahaee.github.io/assets/pdf/de/apply/sprach_zeugnis.pdf}{\textcolor{cyan!70!black}{Stufe II}}} \\[1ex]
+        \vspace{-5pt}
+        {}\\
+        {Note: \href{https://montahaee.github.io/assets/pdf/de/apply/sprach_zeugnis.pdf}{\textcolor{cyan!70!black}{Stufe II{\externallink{}{0.62}{.75}{0.08}{10}}}}} \\[1ex]
 %        {\footnotesize Elective Courses: Chemistry, Engineering, Art} \\
-
-        {\large \textbf{Angewandte Mathematik (\href{https://montahaee.github.io/assets/pdf/en/apply/bsc_degree.pdf}{\textcolor{cyan!60!black}{Abschluss}})}} \\
+%        \vspace{-3pt}
+        {\large \textbf{Angewandte Mathematik (\href{https://montahaee.github.io/assets/pdf/en/apply/bsc_degree.pdf}{\textcolor{cyan!60!black}{Abschluss{\externallink{}{0.62}{1.25}{-0.3}{0}}}})}} \\
         \faUniversity{} \href{https://en.wikipedia.org/wiki/Payame_Noor_University}{\textcolor{green!30!black}{Payame Noor}} University{\textcolor{green!30!black}{\externallink{https://en.wikipedia.org/wiki/Payame_Noor_University}{0.82}{1.25}{-0.23}{0}}}
-        \cvevent{Pakdasht}{Okt 2005}{Jul 2009}{Studiengang}{Bachelor of Science}{.1cm}
+        \eduevent{Pakdasht}{Okt 2005}{Jul 2009}{Studiengang}{Bachelor of Science}{.1cm}
         {Note: 15.54} \\[1ex]
         {\footnotesize Schwerpunkt: Lineare/ Algebra, Numerische (ODE) und Mathematische Analysis, Mathematische Statistik, Graphentheorie, Mathematische Modelle der Natur (ODE)} \\
         {\footnotesize Bachelorarbeit: Anwendung Nichtlinear Konjugierte Gradient-Algorithmen zur Abschätzung elektromagnetischer Inversion} \\[2ex]
-         \vspace{+5pt}
+         \vspace{+2pt}
         %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
         % WORK EXPERIENCE
         \phantomsection{}
         \addcontentsline{toc}{section}{Work Experience}
-        \section*{\scshape\Large Berufliche Erfahrung \rule{\linewidth}{0.4pt}}
+        \section*{\scshape\Large Berufliche Erfahrung \rule{\linewidth}{0.4pt}} \vspace{-7pt}
 %
         \faUniversity{} {\large \textbf{\href{https://dap-aachen.de/}{
             \textcolor{green!30!black}{DAP}} RWTH{\textcolor{green!30!black}{\externallink{https://dap-aachen.de/}{0.82}{1.0}{0.1}{0}}}}} \\
         {{\fontseries{medium}\selectfont Vollzeit, \href{https://de.wikipedia.org/wiki/Mathematisch-technischer_Softwareentwickler}{
             \textcolor{green!30!black}{MATSE}}-Azubi{\textcolor{green!30!black}{\externallink{https://de.wikipedia.org/wiki/Mathematisch-technischer_Softwareentwickler}{0.82}{0.9}{0.1}{0}}}}} \\
         {\faCalendar {} {\scshape\fontseries{light}\selectfont\footnotesize Okt 2019 \textendash{} Aug 2023}}
-        \vspace{+6pt}
+        \vspace{+5pt}
         \begin{itemize}
             \setlength{\itemsep}{-3pt}
 %            \item Durchführung verschiedener Aufgaben
-            \begin{itemize}
+%            \begin{itemize}
                 \item[\larrow{bgcol}]\href{https://montahaee.github.io/assets/pdf/en/projects/praxisbericht2_morteza_montahaee_signed.pdf}{\textcolor{darkgreen!70!red}{Entwicklung{{\externallink{}{0.62}{1.25}{-0.43}{10}}}}}einer \href{https://plm.sw.siemens.com/de-DE/nx/}{\textcolor{cyan!70!black}{NX{\textcolor{cyan!70!black}{\externallink{https://plm.sw.siemens.com/de-DE/nx/}{0.62}{1.55}{-0.43}{10}}}}}CAD Bibliothek zur Generierung von Lattice
                 in C\#, wodurch die Effizienz der Datentransfers und die Leistungsfähigkeit bei der Verarbeitung komplexer Strukturen verbessert wurden
-                \item[\larrow{bgcol}]\href{https://montahaee.github.io/assets/pdf/en/projects/praxisbericht1_morteza_montahaee_signed.pdf}{\textcolor{darkgreen!70!red}{Entwurf{{\externallink{}{0.62}{1.65}{-0.33}{10}}}}}von Workflow-Management additiver Prozesse (\href{https://dap-aachen.de/2022-06-22-idam}{\textcolor{cyan!70!black}{IDAM\externallink{}{0.62}{1.65}{-0.33}{10}}}) mit Enterprise Architect (\href{https://sparxsystems.com/}{\textcolor{cyan!70!black}{EA\externallink{}{0.62}{1.45}{-0.33}{10}}}) zur präziseren Prozesssteuerung und verbesserten Nachvollziehbarkeit
+                \item[\larrow{bgcol}]\href{https://montahaee.github.io/assets/pdf/en/projects/praxisbericht1_morteza_montahaee_signed.pdf}{\textcolor{darkgreen!70!red}{Entwurf{{\externallink{}{0.62}{1.65}{-0.33}{10}}}}}von Workflow-Management additiver Prozesse (\href{https://dap-aachen.de/2022-06-22-idam}{\textcolor{cyan!70!black}{IDAM\externallink{}{0.62}{1.65}{-0.33}{0}}}) mit Enterprise Architect (\href{https://sparxsystems.com/}{\textcolor{cyan!70!black}{EA\externallink{}{0.62}{1.5}{-0.33}{0}}}) zur präziseren Prozesssteuerung und verbesserten Nachvollziehbarkeit
                 \item[\larrow{bgcol}] \href{https://montahaee.github.io/assets/pdf/de/apply/recommandation_letter.pdf}{\textcolor{darkgreen!70!red}{Beteiligung{{\externallink{}{0.62}{1.25}{-0.33}{10}}}}} an der Entwicklung von Forschungsdatenmodellen mit Python (auf \href{https://www.itc.rwth-aachen.de/cms/it-center/services/forschung/~smhwy/coscine/}{\textcolor{cyan!70!black}{{Coscine{\externallink{}{0.62}{1.25}{-0.33}{10}}}}}), was die Effizienz und Konsistenz bei der Verwaltung gro\ss er wissenschaftlicher Datensätze erhöhte
-                \item[\larrow{bgcol}]Unterstützung der Firma MAT.TRAFFIC GmbH im Rahmen einer MATSE \href{https://blog.rwth-aachen.de/itc/en/2017/04/12/software-engineering-messe-der-matse2015} {Projektarbeit} in Python: Geo-Erkennung von Kreuzungen für intelligente Verkehrssysteme und Stadtplanung mithilfe der Metadaten von OpenStreetMap(\href{https://www.openstreetmap.org/}{OSM}), was zur Automatisierung der Erkennung urbaner Kreuzungen und zur Verbesserung der Planungsprozesse beitrug
+                \item[\larrow{bgcol}]Unterstützung der Firma MAT.TRAFFIC GmbH im Rahmen einer MATSE \href{https://blog.rwth-aachen.de/itc/en/2017/04/12/software-engineering-messe-der-matse2015} {\textcolor{cyan!70!black}{Projektarbeit\externallink{}{0.62}{1.5}{-0.33}{0}}}in Python: Geo-Erkennung von Kreuzungen für intelligente Verkehrssysteme und Stadtplanung mithilfe der Metadaten von OpenStreetMap(\href{https://www.openstreetmap.org/}{OSM}), was zur Automatisierung der Erkennung urbaner Kreuzungen und zur Verbesserung der Planungsprozesse beitrug
             \end{itemize}
 %            \item Other Task
-        \end{itemize}
+%        \end{itemize}
 %
 %        \faUniversity{} {\large \textbf{\href{https://dap-aachen.de/}{
 %            \textcolor{green!30!black}{DAP}} RWTH \externallink{https://dap-aachen.de/}{0.63}{true}}} \\
@@ -389,46 +396,62 @@
         \color{maintext}
         % \vspace{.6cm}
         %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-        % PROJECTS
+        % PROJECTS /other activities
         \phantomsection
         \addcontentsline{toc}{section}{Projects}
-        \section*{\scshape\Large Projects \rule{\linewidth}{0.4pt}}
+%        \section*{\scshape\Large Weitere berufliche Tätigkeiten \rule{\linewidth}{0.4pt}}
+        \section*{\scshape\Large Weitere berufliche Tätigkeiten \rule[0ex]{3.475cm}{0.4pt}}
         \begin{justify}
         \setlength{\parindent}{0pt}
-        {\large \textbf{Quis blandit turpis}} \\
-        {\scshape\fontseries{light}\selectfont\footnotesize Acme Corp \qquad 2017} \\
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Tincidunt praesent semper feugiat nibh sed pulvinar. Tristique nulla aliquet enim tortor at auctor. \\[1ex]
-        Skill 1, Skill 2, Skill 3 \\
+        \faBuilding{} {\normalsize \textbf{Event Probat}} \\[1ex]
+        \jobevent{Aachen}{Nov 2014}{Sep 2019}{Kellner und Eventassistent}{3.425cm} \\
+        \faIndustry{} {\normalsize \textbf{Frankenberg}} \\[1ex]
+        \jobevent{Würselen}{Jul 2012}{Okt 2014}{Aushelfer}{6.4cm} \\
+        \faGopuram{} {\normalsize \textbf{NAJA}} \\[1ex]
+        \jobevent{Teheran}{Aug 2009}{Feb 2011}{Wehrdienst}{6.cm}
 
-        {\large \textbf{Lacus laoreet non}} \\
-        {\scshape\fontseries{light}\selectfont\footnotesize Acme Corp \qquad 2018} \\
-        Pellentesque elit ullamcorper dignissim cras tincidunt. Sit amet commodo nulla facilisi nullam vehicula ipsum. Blandit cursus risus at ultrices mi tempus imperdiet. Lectus sit amet est placerat in egestas erat.\\[1ex]
-        Skill 1, Skill 2, Skill 3, \LaTeX \\
+%        \faM{\scshape\fontseries{light}\selectfont\footnotesize Acme Corp \qquad 2017} \\
+%        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Tincidunt praesent semper feugiat nibh sed pulvinar. Tristique nulla aliquet enim tortor at auctor. \\[1ex]
+%        Skill 1, Skill 2, Skill 3 \\
+%
+%        {\large \textbf{Lacus laoreet non}} \\
+%        {\scshape\fontseries{light}\selectfont\footnotesize Acme Corp \qquad 2018} \\
+%        Pellentesque elit ullamcorper dignissim cras tincidunt. Sit amet commodo nulla facilisi nullam vehicula ipsum. Blandit cursus risus at ultrices mi tempus imperdiet. Lectus sit amet est placerat in egestas erat.\\[1ex]
+%        Skill 1, Skill 2, Skill 3, \LaTeX \\
+%
+%        {\large \textbf{Viverra maecenas accumsan lacus}} \\
+%        {\scshape\fontseries{light}\selectfont\footnotesize Private \qquad 2022 and ongoing} \\
+%        Quisque non tellus orci ac auctor augue mauris augue neque. Sit amet luctus venenatis lectus magna fringilla urna porttitor rhoncus. Proin nibh nisl condimentum id venenatis a condimentum vitae sapien. \\[1ex]
+%        Skill 1, Skill 2, Skill 3 \\
+%
+%        {\large \textbf{Ut faucibus pulvinar elementum}} \\
+%        {\scshape\fontseries{light}\selectfont\footnotesize TU Dresden \qquad 2022} \\
+%        Proin nibh nisl condimentum id venenatis a condimentum vitae sapien. Amet aliquam id diam maecenas ultricies mi eget. Viverra maecenas accumsan lacus vel facilisis volutpat. \\[1ex]
+%        Skill 1, Skill 2, Skill 3 \\
 
-        {\large \textbf{Viverra maecenas accumsan lacus}} \\
-        {\scshape\fontseries{light}\selectfont\footnotesize Private \qquad 2022 and ongoing} \\
-        Quisque non tellus orci ac auctor augue mauris augue neque. Sit amet luctus venenatis lectus magna fringilla urna porttitor rhoncus. Proin nibh nisl condimentum id venenatis a condimentum vitae sapien. \\[1ex]
-        Skill 1, Skill 2, Skill 3 \\
-        
-        {\large \textbf{Ut faucibus pulvinar elementum}} \\
-        {\scshape\fontseries{light}\selectfont\footnotesize TU Dresden \qquad 2022} \\
-        Proin nibh nisl condimentum id venenatis a condimentum vitae sapien. Amet aliquam id diam maecenas ultricies mi eget. Viverra maecenas accumsan lacus vel facilisis volutpat. \\[1ex]
-        Skill 1, Skill 2, Skill 3 \\
 
-        {\large \textbf{Quisque non tellus orci}} \\
-        {\scshape\fontseries{light}\selectfont\footnotesize ACME Corp. \qquad 2023} \\
-        Viverra maecenas accumsan lacus vel facilisis volutpat. Tortor condimentum lacinia quis vel eros donec ac odio tempor. Ultricies lacus sed turpis tincidunt id aliquet risus. \\[1ex]
-        Skill 1, Skill 2, Skill 3 \\
-        
-        {\large \textbf{Amet consectetur adipiscing elit}} \\
-        {\scshape\fontseries{light}\selectfont\footnotesize ACME Corp \qquad 2023} \\
-        Eget lorem dolor sed viverra. Eleifend donec pretium vulputate sapien. Pellentesque pulvinar pellentesque habitant morbi tristique senectus et netus et. Augue neque gravida in fermentum et. Ullamcorper velit sed ullamcorper morbi tincidunt ornare massa eget egestas. \\[1ex]
-        Skill 1, Skill 2, Skill 3 \\
-        
-        {\large \textbf{Augue neque gravida in fermentum}} \\
-        {\scshape\fontseries{light}\selectfont\footnotesize Sample Uni \qquad 2023} \\
-        met aliquam id diam maecenas ultricies mi eget. Viverra maecenas accumsan lacus vel facilisis volutpat. Tortor condimentum lacinia quis vel eros donec ac odio tempor. Ultricies lacus sed turpis tincidunt id aliquet risus. \\[1ex]
-        Skill 1, Skill 2, Skill 3, \LaTeX 
+%        \begin{minipage}{\textwidth}
+%            \begin{tabular}{@{}p{0.4\textwidth} p{0.45\textwidth}@{}}
+%                \cvdetail{Kellner und Eventassistent\hspace{22.5120em}\textcolor{magenta!60!black}{11/2014 - 09/2019}}\\
+%                \cvdetail{{Aushelfer\hspace{28.7em}\textcolor{green!40!black}{07/2012 - 10/2014}}}\\
+%                \cvdetail{{Wehrdienst\hspace{27.605em}\textcolor{red!50!black}{08/2009 - 02/2011}}}\\
+%            \end{tabular}
+%        \end{minipage}
+
+%        {\large \textbf{Quisque non tellus orci}} \\
+%        {\scshape\fontseries{light}\selectfont\footnotesize ACME Corp. \qquad 2023} \\
+%        Viverra maecenas accumsan lacus vel facilisis volutpat. Tortor condimentum lacinia quis vel eros donec ac odio tempor. Ultricies lacus sed turpis tincidunt id aliquet risus. \\[1ex]
+%        Skill 1, Skill 2, Skill 3 \\
+%
+%        {\large \textbf{Amet consectetur adipiscing elit}} \\
+%        {\scshape\fontseries{light}\selectfont\footnotesize ACME Corp \qquad 2023} \\
+%        Eget lorem dolor sed viverra. Eleifend donec pretium vulputate sapien. Pellentesque pulvinar pellentesque habitant morbi tristique senectus et netus et. Augue neque gravida in fermentum et. Ullamcorper velit sed ullamcorper morbi tincidunt ornare massa eget egestas. \\[1ex]
+%        Skill 1, Skill 2, Skill 3 \\
+%
+%        {\large \textbf{Augue neque gravida in fermentum}} \\
+%        {\scshape\fontseries{light}\selectfont\footnotesize Sample Uni \qquad 2023} \\
+%        met aliquam id diam maecenas ultricies mi eget. Viverra maecenas accumsan lacus vel facilisis volutpat. Tortor condimentum lacinia quis vel eros donec ac odio tempor. Ultricies lacus sed turpis tincidunt id aliquet risus. \\[1ex]
+%        Skill 1, Skill 2, Skill 3, \LaTeX
         \end{justify}
         \vfill%
         {\hfill\small\fontseries{extralight}\selectfont Page \thepage of \pageref{LastPage}\hfill}
