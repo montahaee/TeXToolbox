@@ -109,11 +109,13 @@
 \definecolor{maintext}{cmyk}{1, 0.02, 0, 0.8}
 % Text Color of the Sidebar Column
 \definecolor{sidetext}{cmyk}{0, 0, 0.07, 0.04}
+\definecolor{bgcol}{RGB}{115,115,115}
+\definecolor{darkgreen}{RGB}{0,110,0}
 
 \pagecolor{mainbg}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Your newcommand
+% Your newcommands
 \newcommand{\cvevent}[5]{
         {\scshape\fontseries{light}\selectfont\footnotesize \faMapMarker{} #1 \qquad{} \faCalendar{} #2 \textendash{} #3} \\
 }
@@ -141,6 +143,34 @@
     }%
 }
 
+
+\renewcommand{\externallink}[5]{%
+    \href{#1}{\raisebox{{#3}ex}{\hspace{{#4}em}\rotatebox{#5}{\scalebox{#2}{\faExternalLink}}}}%
+}
+
+
+% a six pointed arrow poiting to the left
+\newcommand{\tzlarrow}{(0,0) -- (0.2,0) -- (0.3,0.2) -- (0.2,0.4) -- (0,0.4) -- (0.1,0.2) -- cycle;}
+
+% include the left arrow into a tikz picture
+% param1: fill color
+%
+\newcommand{\larrow}[1]{
+    \begin{tikzpicture}[scale=0.65]
+    %\begin{tikzpicture}{justify}[scale=0.58]
+    \filldraw[fill=#1!80,draw=#1!80!black]  \tzlarrow
+    \end{tikzpicture}
+}
+
+% creates a stretched box as cv entry detail
+% param 1:	information describing the event
+%
+\newcommand{\cvdetail}[1]{
+    \begin{tabular*}{1\textwidth}{p{2.56cm} p{14.44cm}}
+    & \larrow{bgcol}  #1\\ [3pt]
+    \end{tabular*}
+}
+
 \begin{document}
 \setlength{\topskip}{0pt}\setlength{\footskip}{0pt}%
 \fcolorbox{red}{sidebg}{%
@@ -152,7 +182,7 @@
         {\bfseries\scshape\huge Monthaee} \qquad {\large\textbf{ Lebenslauf}}
         \vspace{.3cm} \\
         % Demo Subject, \\
-        {\faStarOfLife{}  17/09/1984} 
+        {\faStarOfLife{}  17/09/1984}
         \\
         \begin{center}
             \begin{tikzpicture}
@@ -205,7 +235,7 @@
         \vspace{1pt} \\
         \rule{\linewidth}{0.4pt}
         %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-        % GRADESCALE (if nesseary, e.g. if you apply abroad, where scales 
+        % GRADESCALE (if nesseary, e.g. if you apply abroad, where scales
         % are different. You should at least provide, what the best possible
         % grade and what the worst possible grade is)
         \vfill
@@ -241,7 +271,7 @@
         \begin{center}
             {\tiny GPA: (18-20) sehr gut $\approx$90\%-100\%, (15-17) gut $\approx$80\%-89\%, (12-14) befriedigend $\approx$70\%-79\%, (10-12) ausreichend $\approx$60\%-69\%, (0-9) mangelhaft $\approx$0\%-59\%}
 %            \href{https://en.wikipedia.org/wiki/Academic_grading_in_Iran}{\scalebox{0.72}{\faExternalLink}}
-            \externallink{https://en.wikipedia.org/wiki/Academic_grading_in_Iran}{0.72}{false}
+            \externallink{https://en.wikipedia.org/wiki/Academic_grading_in_Iran}{0.52}{0.95}{-0.5}{0}
         \end{center}
     \end{minipage}
 }
@@ -284,59 +314,67 @@
 %        {\footnotesize Elective Courses: Chemistry, Engineering, Art} \\
 
         {\large \textbf{Angewandte Mathematik (\href{https://montahaee.github.io/assets/pdf/en/apply/bsc_degree.pdf}{\textcolor{cyan!60!black}{Abschluss}})}} \\
-        \faUniversity{} \href{https://en.wikipedia.org/wiki/Payame_Noor_University}{\textcolor{green!30!black}{Payame Noor}} University \externallink{https://en.wikipedia.org/wiki/Payame_Noor_University}{0.52}{true}
+        \faUniversity{} \href{https://en.wikipedia.org/wiki/Payame_Noor_University}{\textcolor{green!30!black}{Payame Noor}} University{\textcolor{green!30!black}{\externallink{https://en.wikipedia.org/wiki/Payame_Noor_University}{0.82}{1.25}{-0.23}{0}}}
         \cvevent{Pakdasht}{Okt 2005}{Jul 2009}{Studiengang}{Bachelor of Science}{.1cm}
         {Note: 15.54} \\[1ex]
         {\footnotesize Schwerpunkt: Lineare/ Algebra, Numerische (ODE) und Mathematische Analysis, Mathematische Statistik, Graphentheorie, Mathematische Modelle der Natur (ODE)} \\
         {\footnotesize Bachelorarbeit: Anwendung Nichtlinear Konjugierte Gradient-Algorithmen zur Abschätzung elektromagnetischer Inversion} \\[2ex]
-         \vspace{+7pt}
+         \vspace{+5pt}
         %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
         % WORK EXPERIENCE
         \phantomsection{}
         \addcontentsline{toc}{section}{Work Experience}
         \section*{\scshape\Large Berufliche Erfahrung \rule{\linewidth}{0.4pt}}
 %
-        \faUniversity{} {\large \textbf{\href{https://dap-aachen.de/}{\textcolor{green!30!black}{DAP}} RWTH \externallink{https://dap-aachen.de/}{0.63}{true}}} \\
-        {{\fontseries{medium}\selectfont Vollzeit, MASE-Azubi \externallink{https://de.wikipedia.org/wiki/Mathematisch-technischer_Softwareentwickler}{0.72}{true}}} \\
-        \faCalendar {} {\scshape\fontseries{light}\selectfont\footnotesize Okt 2019 \textendash{} Aug 2023}
+        \faUniversity{} {\large \textbf{\href{https://dap-aachen.de/}{
+            \textcolor{green!30!black}{DAP}} RWTH{\textcolor{green!30!black}{\externallink{https://dap-aachen.de/}{0.82}{1.0}{0.1}{0}}}}} \\
+        {{\fontseries{medium}\selectfont Vollzeit, \href{https://de.wikipedia.org/wiki/Mathematisch-technischer_Softwareentwickler}{
+            \textcolor{green!30!black}{MATSE}}-Azubi{\textcolor{green!30!black}{\externallink{https://de.wikipedia.org/wiki/Mathematisch-technischer_Softwareentwickler}{0.82}{0.9}{0.1}{0}}}}} \\
+        {\faCalendar {} {\scshape\fontseries{light}\selectfont\footnotesize Okt 2019 \textendash{} Aug 2023}}
+        \vspace{+6pt}
         \begin{itemize}
             \setlength{\itemsep}{-3pt}
-            \item Do stuff
+%            \item Durchführung verschiedener Aufgaben
             \begin{itemize}
-                \item That included Stuff
-                \item and more Stuff
+                \item[\larrow{bgcol}]\href{https://montahaee.github.io/assets/pdf/en/projects/praxisbericht2_morteza_montahaee_signed.pdf}{\textcolor{darkgreen!70!red}{Entwicklung{{\externallink{}{0.62}{1.25}{-0.43}{10}}}}}einer \href{https://plm.sw.siemens.com/de-DE/nx/}{\textcolor{cyan!70!black}{NX{\textcolor{cyan!70!black}{\externallink{https://plm.sw.siemens.com/de-DE/nx/}{0.62}{1.55}{-0.43}{10}}}}}CAD Bibliothek zur Generierung von Lattice
+                in C\#, wodurch die Effizienz der Datentransfers und die Leistungsfähigkeit bei der Verarbeitung komplexer Strukturen verbessert wurden
+                \item[\larrow{bgcol}]\href{https://montahaee.github.io/assets/pdf/en/projects/praxisbericht1_morteza_montahaee_signed.pdf}{\textcolor{darkgreen!70!red}{Entwurf{{\externallink{}{0.62}{1.65}{-0.33}{10}}}}}von Workflow-Management additiver Prozesse (\href{https://dap-aachen.de/2022-06-22-idam}{\textcolor{cyan!70!black}{IDAM\externallink{}{0.62}{1.65}{-0.33}{10}}}) mit Enterprise Architect (\href{https://sparxsystems.com/}{\textcolor{cyan!70!black}{EA\externallink{}{0.62}{1.45}{-0.33}{10}}}) zur präziseren Prozesssteuerung und verbesserten Nachvollziehbarkeit
+                \item[\larrow{bgcol}] \href{https://montahaee.github.io/assets/pdf/de/apply/recommandation_letter.pdf}{\textcolor{darkgreen!70!red}{Beteiligung{{\externallink{}{0.62}{1.25}{-0.33}{10}}}}} an der Entwicklung von Forschungsdatenmodellen mit Python (auf \href{https://www.itc.rwth-aachen.de/cms/it-center/services/forschung/~smhwy/coscine/}{\textcolor{cyan!70!black}{{Coscine{\externallink{}{0.62}{1.25}{-0.33}{10}}}}}), was die Effizienz und Konsistenz bei der Verwaltung gro\ss er wissenschaftlicher Datensätze erhöhte
+                \item[\larrow{bgcol}]Unterstützung der Firma MAT.TRAFFIC GmbH im Rahmen einer MATSE \href{https://blog.rwth-aachen.de/itc/en/2017/04/12/software-engineering-messe-der-matse2015} {Projektarbeit} in Python: Geo-Erkennung von Kreuzungen für intelligente Verkehrssysteme und Stadtplanung mithilfe der Metadaten von OpenStreetMap(\href{https://www.openstreetmap.org/}{OSM}), was zur Automatisierung der Erkennung urbaner Kreuzungen und zur Verbesserung der Planungsprozesse beitrug
             \end{itemize}
-            \item Other Task
+%            \item Other Task
         \end{itemize}
 %
-        {\large \textbf{McKienze Ltd}} \\
-        {{\fontseries{medium}\selectfont Part-time, Thieve}} \\
-        {\scshape\fontseries{light}\selectfont\footnotesize Oct 2013 \textendash{} Nov 2016}
-        \begin{itemize}
-            \setlength{\itemsep}{-3pt}
-            \item Do stuff
-            \begin{itemize}
-                \item That included Stuff
-                \item and more Stuff
-            \end{itemize}
-            \item Other Task
-            \begin{itemize}
-                \item That included more Stuff
-                \item and other more different Stuff
-            \end{itemize}
-            \item tellus elementum sagittis vitae et
-            \item aliquam sem et tortor consequat
-            \item ullamcorper velit sed ullamcorper morbi tincidunt
-            \item rhoncus est pellentesque elit ullamcorper dignissim
-        \end{itemize}
-%
-        {\large \textbf{ACME Corp}}\\
-        {{\fontseries{medium}\selectfont Traineeship, Occupation}}\\
-        {\scshape\fontseries{light}\selectfont\footnotesize Aug 2010 \textendash{} Oct 2013}
-        \begin{itemize}
-            \setlength{\itemsep}{-4pt}
-            \item massa tempor nec feugiat nisl pretium fusce id
-        \end{itemize}
+%        \faUniversity{} {\large \textbf{\href{https://dap-aachen.de/}{
+%            \textcolor{green!30!black}{DAP}} RWTH \externallink{https://dap-aachen.de/}{0.63}{true}}} \\
+%        {{\fontseries{medium}\selectfont Vollzeit, \href{https://de.wikipedia.org/wiki/Mathematisch-technischer_Softwareentwickler}{
+%            \textcolor{green!30!black}{MATSE}}-Azubi \externallink{https://de.wikipedia.org/wiki/Mathematisch-technischer_Softwareentwickler}{0.72}{true}}} \\
+%        {\faCalendar {} {\scshape\fontseries{light}\selectfont\footnotesize Okt 2019 \textendash{} Aug 2023}}
+%        \begin{itemize}
+%            \setlength{\itemsep}{-3pt}
+%            \item Durchführung verschiedener Aufgaben
+%            \begin{itemize}
+%                \item[\larrow{bgcol}]
+%                \item and more Stuff
+%            \end{itemize}
+%            \item Other Task
+%            \begin{itemize}
+%                \item That included more Stuff
+%                \item and other more different Stuff
+%            \end{itemize}
+%            \item tellus elementum sagittis vitae et
+%            \item aliquam sem et tortor consequat
+%            \item ullamcorper velit sed ullamcorper morbi tincidunt
+%            \item rhoncus est pellentesque elit ullamcorper dignissim
+%        \end{itemize}
+%%
+%        {\large \textbf{ACME Corp}}\\
+%        {{\fontseries{medium}\selectfont Traineeship, Occupation}}\\
+%        {\scshape\fontseries{light}\selectfont\footnotesize Aug 2010 \textendash{} Oct 2013}
+%        \begin{itemize}
+%            \setlength{\itemsep}{-4pt}
+%            \item massa tempor nec feugiat nisl pretium fusce id
+%        \end{itemize}
         \vfill%
         {\hfill\small\fontseries{extralight}\selectfont Page \thepage of \pageref{LastPage}\hfill}
     \end{minipage}
