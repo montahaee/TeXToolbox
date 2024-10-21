@@ -193,7 +193,7 @@
         \\
         \begin{center}
             \begin{tikzpicture}
-            \clip (0,0) circle (3cm) node[anchor=center] {\includegraphics[width=6cm]{portait_template.jpg}};
+            \clip (0,0) circle (3cm) node[anchor=center] {\includegraphics[width=6cm]{cropped_010_5}};
             \end{tikzpicture}
         \end{center}
         \vspace{.3cm}
@@ -205,7 +205,7 @@
         \begin{tabularx}{\textwidth}{cY}
             \faPhone{}      & \href{tel:+49 176 703 552 53}{+49 176 703 552 53} \\
             \faSkype{}      & \href{skype:Morteza Montahaee?chat}{Morteza Montahaee} \\
-            \faEnvelope{}   & \href{mailto:morteza.montahaee@rwth-aachen.de}{morteza.montahaee@outlook.com} \\
+            \faEnvelope{}   & \href{mailto:morteza.montahaee@rwth-aachen.de}{\fontsize{9.4}{12}\selectfont morteza.montahaee@rwth-aachen.de} \\
             \scalebox{1.144}{\faMapMarker}{}  & \href{https://www.bing.com/maps?q=Otto+str+19+aachen\&FORM=AWRE}{Ottostr. 19, 52070 Aachen} \\
         \end{tabularx}
         \vspace{.3cm} \\
@@ -230,10 +230,29 @@
         \phantomsection{}
         \addcontentsline{toc}{section}{Skills}
         \section*{\large Skills}
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        % GRADESCALE (if nesseary, e.g. if you apply abroad, where scales
+        % are different. You should at least provide, what the best possible
+        % grade and what the worst possible grade is)
+        \begin{center}
+            \begin{tikzpicture}
+                % Mid-level
+                \draw[fill=green!70!black] (0,0) circle (0.75ex);
+                \node[left] at (-0.25,0) {\betiny Gut};
+
+                % High-level
+                \draw[fill=red!50!white] (0.5,1.0) circle (0.75ex);
+                \node[right] at (0.75,1.0) {\betiny Sehr Gut};
+
+                % Low-level
+                \draw[fill=magenta!45!white] (1.0,0) circle (0.75ex);
+                \node[right] at (1.25,0) {\betiny Grundkenntnisse};
+            \end{tikzpicture}
+        \end{center}
 
         \begin{tabularx}{\textwidth}{cY}
-            \faCode{}        & C++, C, Python, Bash, PHP, Javascript, C\#, Java, MariaDB, MySQL, Visual Basic \\
-            \faPen*{}        & \LaTeX, Liquid, HTML, CSS, SHACL \\
+            \faCode{}        & {\textcolor{green!75!black}{C++}}, {\textcolor{green!75!black}{C}}, {\textcolor{red!45!white}{Python}}, {\textcolor{magenta!40!white}{Bash}}, {\textcolor{green!75!black}{PHP}}, {\textcolor{green!75!black}{Javascript}}, {\textcolor{red!45!white}{C\#}}, {\textcolor{red!45!white}{Java}}, {\textcolor{green!75!black}{MariaDB}}, {\textcolor{green!75!black}{MySQL}}, {\textcolor{magenta!40!white}{Visual Basic}} \\
+            \faPen*{}        & {\textcolor{red!45!white}{\LaTeX}}, {\textcolor{red!45!white}{Liquid}}, {\textcolor{red!45!white}{HTML}}, {\textcolor{green!75!black}{CSS}}, {\textcolor{magenta!40!white}{SHACL}} \\
             \faFont{}        & \{MS, Libre\} Office, Vim, PDF-XChange,  Adobe Acrobat \\
             \faCogs{}        & Dual (Windows, Linux) \\
             \faLaptopCode{}  & IntelliJ, Rider, Visual Studio/Code, PyCharm,  CLion, DataGrip, MATLAB\\
@@ -241,39 +260,8 @@
         \end{tabularx}
         \vspace{1pt} \\
         \rule{\linewidth}{0.4pt}
-        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-        % GRADESCALE (if nesseary, e.g. if you apply abroad, where scales
-        % are different. You should at least provide, what the best possible
-        % grade and what the worst possible grade is)
+
         \vfill
-%        \begin{center}
-%            \begin{tikzpicture}
-%                % Low-level
-%                \draw[fill=blue] (0,0) circle (0.75ex);
-%                \node[right] at (0.5,0) {\footnotesize Grundkenntnisse};
-%
-%                % Mid-level
-%                \draw[fill=yellow] (3.75,0) circle (0.75ex);
-%                \node[right] at (4.25,0) {\footnotesize Gut};
-%
-%                % High-level
-%                \draw[fill=red] (5.5,0) circle (0.75ex);
-%                \node[right] at (6.00,0) {\footnotesize Sehr Gut};
-%            \end{tikzpicture}
-            \begin{tikzpicture}
-                % Low-level
-                \draw[fill=blue] (0,0) circle (0.75ex);
-                \node[left] at (-0.25,0) {\betiny Gut};
-
-                % Mid-level
-                \draw[fill=yellow] (0.5,1.0) circle (0.75ex);
-                \node[right] at (0.75,1.0) {\betiny Sehr Gut};
-
-                % High-level
-                \draw[fill=red] (1.0,0) circle (0.75ex);
-                \node[right] at (1.25,0) {\betiny Grundkenntnisse};
-            \end{tikzpicture}
-%        \end{center}
 %        {\tiny GPA: (1) very good $\approx$91\%-100\%, (2) good $\approx$81\%-90\%, (3) satisfactory $\approx$66\%-80\%, (4) sufficient $\approx$50\%-65\%, (5) failed $\approx$0\%-49\%}
         \begin{center}
             {\tiny GPA: (18-20) sehr gut $\approx$90\%-100\%, (15-17) gut $\approx$80\%-89\%, (12-14) befriedigend $\approx$70\%-79\%, (10-12) ausreichend $\approx$60\%-69\%, (0-9) mangelhaft $\approx$0\%-59\%}
@@ -298,10 +286,10 @@
         \eduevent{Jülich}{Okt 2019}{Sep 2024}
 %        {\href{https://montahaee.github.io/assets/pdf/de/apply/Abschlussbescheinigung.pdf}{\textcolor{cyan!70!black}{Studiengang}}: Bachelor of Science} \\[1ex]
         {Studiengang}{Bachelor of Science}{.1cm}
-        {Note: 2.7} \\[1ex]
+        {Note: 2.7} \\[0ex]
 %        {\footnotesize Subsidiary subject: Psychology} \\
         {\footnotesize Schwerpunkt: Analysis, Lineare Algebra, Stochastik, Numerik, Algorithmen und Datenstrukturen, Data Science, Datenbanken, Softwaretechnik} \\
-        {\footnotesize \href{https://montahaee.github.io/assets/pdf/de/projects/myFH_Bachelorthesis.pdf}{\textcolor{cyan!70!black}{Bachelorarbeit}}: Datengetriebene äu\ss{}ere Differentialrechnung auf Graphen zur Diskretisierung von elliptischen partiellen Differentialgleichungen} \\[2ex]
+        {\footnotesize \href{https://montahaee.github.io/assets/pdf/de/projects/myFH_Bachelorthesis.pdf}{\textcolor{cyan!70!black}{Bachelorarbeit\externallink{}{0.62}{1.35}{-0.3}{0}}}: Datengetriebene äu\ss{}ere Differentialrechnung auf Graphen zur Diskretisierung von elliptischen partiellen Differentialgleichungen} \\[2ex]
 
         {\large \textbf{Mathematik (Ohne Abschluss)}} \\[1ex]
         \faUniversity{} RWTH University \\
@@ -343,11 +331,11 @@
             \setlength{\itemsep}{-3pt}
 %            \item Durchführung verschiedener Aufgaben
 %            \begin{itemize}
-                \item[\larrow{bgcol}]\href{https://montahaee.github.io/assets/pdf/en/projects/praxisbericht2_morteza_montahaee_signed.pdf}{\textcolor{darkgreen!70!red}{Entwicklung{{\externallink{}{0.62}{1.25}{-0.43}{10}}}}}einer \href{https://plm.sw.siemens.com/de-DE/nx/}{\textcolor{cyan!70!black}{NX{\textcolor{cyan!70!black}{\externallink{https://plm.sw.siemens.com/de-DE/nx/}{0.62}{1.55}{-0.43}{10}}}}}CAD Bibliothek zur Generierung von Lattice
+                \item[\larrow{bgcol}]\href{https://montahaee.github.io/assets/pdf/en/projects/praxisbericht2_morteza_montahaee_signed.pdf}{\textcolor{darkgreen!70!red}{Entwicklung{{\externallink{}{0.62}{1.25}{-0.43}{0}}}}}einer \href{https://plm.sw.siemens.com/de-DE/nx/}{\textcolor{cyan!70!black}{NX{\textcolor{cyan!70!black}{\externallink{https://plm.sw.siemens.com/de-DE/nx/}{0.62}{1.55}{-0.43}{0}}}}}CAD Bibliothek zur Generierung von Lattice
                 in C\#, wodurch die Effizienz der Datentransfers und die Leistungsfähigkeit bei der Verarbeitung komplexer Strukturen verbessert wurden
                 \item[\larrow{bgcol}]\href{https://montahaee.github.io/assets/pdf/en/projects/praxisbericht1_morteza_montahaee_signed.pdf}{\textcolor{darkgreen!70!red}{Entwurf{{\externallink{}{0.62}{1.65}{-0.33}{10}}}}}von Workflow-Management additiver Prozesse (\href{https://dap-aachen.de/2022-06-22-idam}{\textcolor{cyan!70!black}{IDAM\externallink{}{0.62}{1.65}{-0.33}{0}}}) mit Enterprise Architect (\href{https://sparxsystems.com/}{\textcolor{cyan!70!black}{EA\externallink{}{0.62}{1.5}{-0.33}{0}}}) zur präziseren Prozesssteuerung und verbesserten Nachvollziehbarkeit
-                \item[\larrow{bgcol}] \href{https://montahaee.github.io/assets/pdf/de/apply/recommandation_letter.pdf}{\textcolor{darkgreen!70!red}{Beteiligung{{\externallink{}{0.62}{1.25}{-0.33}{10}}}}} an der Entwicklung von Forschungsdatenmodellen mit Python (auf \href{https://www.itc.rwth-aachen.de/cms/it-center/services/forschung/~smhwy/coscine/}{\textcolor{cyan!70!black}{{Coscine{\externallink{}{0.62}{1.25}{-0.33}{10}}}}}), was die Effizienz und Konsistenz bei der Verwaltung gro\ss er wissenschaftlicher Datensätze erhöhte
-                \item[\larrow{bgcol}]Unterstützung der Firma MAT.TRAFFIC GmbH im Rahmen einer MATSE \href{https://blog.rwth-aachen.de/itc/en/2017/04/12/software-engineering-messe-der-matse2015} {\textcolor{cyan!70!black}{Projektarbeit\externallink{}{0.62}{1.5}{-0.33}{0}}}in Python: Geo-Erkennung von Kreuzungen für intelligente Verkehrssysteme und Stadtplanung mithilfe der Metadaten von OpenStreetMap(\href{https://www.openstreetmap.org/}{OSM}), was zur Automatisierung der Erkennung urbaner Kreuzungen und zur Verbesserung der Planungsprozesse beitrug
+                \item[\larrow{bgcol}] \href{https://montahaee.github.io/assets/pdf/de/apply/recommandation_letter.pdf}{\textcolor{darkgreen!70!red}{Beteiligung{{\externallink{}{0.62}{1.25}{-0.33}{0}}}}} an der Entwicklung von Forschungsdatenmodellen mit Python (auf \href{https://www.itc.rwth-aachen.de/cms/it-center/services/forschung/~smhwy/coscine/}{\textcolor{cyan!70!black}{{Coscine{\externallink{}{0.62}{1.25}{-0.33}{0}}}}}), was die Effizienz und Konsistenz bei der Verwaltung gro\ss er wissenschaftlicher Datensätze erhöhte
+                \item[\larrow{bgcol}]Unterstützung der Firma MAT.TRAFFIC GmbH im Rahmen einer MATSE \href{https://blog.rwth-aachen.de/itc/en/2017/04/12/software-engineering-messe-der-matse2015} {\textcolor{cyan!70!black}{Projektarbeit\externallink{}{0.62}{1.5}{-0.33}{0}}}in Python: Geo-Erkennung von Kreuzungen für intelligente Verkehrssysteme und Stadtplanung mithilfe der Metadaten von OpenStreetMap(\href{https://www.openstreetmap.org/}{\textcolor{cyan!70!black}{OSM\externallink{}{0.62}{1.5}{-0.33}{0}}}), was zur Automatisierung der Erkennung urbaner Kreuzungen und zur Verbesserung der Planungsprozesse beitrug
             \end{itemize}
 %            \item Other Task
 %        \end{itemize}
@@ -383,7 +371,7 @@
 %            \item massa tempor nec feugiat nisl pretium fusce id
 %        \end{itemize}
         \vfill%
-        {\hfill\small\fontseries{extralight}\selectfont Page \thepage of \pageref{LastPage}\hfill}
+        {\hfill\small\fontseries{extralight}\selectfont Seite \thepage\, von  \pageref{LastPage}\hfill}
     \end{minipage}
 }%
 
@@ -394,13 +382,23 @@
 \fcolorbox{red}{mainbg}{%
     \begin{minipage}[t][\dimexpr\textheight-2\fboxrule-2\fboxsep\relax][t]{\dimexpr0.6\textwidth-2\fboxrule-2\fboxsep\relax}
         \color{maintext}
-        % \vspace{.6cm}
+         \vspace{.6cm}
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        % PROFILE
+        \phantomsection{}
+        \addcontentsline{toc}{section}{Profile}
+        \section*{\scshape{\fontsize{12.65}{15}\selectfont Profile} \rule{\linewidth}{0.4pt}}
+
+        Absolvent in Angewandter Mathematik und Informatik mit umfangreicher Erfahrung in der Softwareentwicklung mit einem Fokus auf \href{https://de.wikipedia.org/wiki/Geometrische_Modellierung#Generative_Modellierung}{\textcolor{cyan!70!black}{Generative{\externallink{}{0.62}{.75}{0.08}{10}}}} Modellierung, Datenbankmanagement, Data Science und Webentwicklung. Leidenschaft für mathematische Methoden zur Lösung komplexer Probleme und ihrer Implementierung möglichst nach \href{https://de.wikipedia.org/wiki/Entwurfsmuster}{\textcolor{cyan!70!black}{Entwurfsmuster{\externallink{}{0.62}{1.25}{-0.73}{10}}}}prinzipien.
+        \vspace{.75cm}
         %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
         % PROJECTS /other activities
         \phantomsection
-        \addcontentsline{toc}{section}{Projects}
+        \addcontentsline{toc}{section}{Further Work Experience}
 %        \section*{\scshape\Large Weitere berufliche Tätigkeiten \rule{\linewidth}{0.4pt}}
-        \section*{\scshape\Large Weitere berufliche Tätigkeiten \rule[0ex]{3.475cm}{0.4pt}}
+%        \section*{\scshape\large Weitere berufliche Tätigkeiten \rule[0ex]{3.475cm}{0.4pt}}
+        \section*{\scshape{\fontsize{12.65}{15}\selectfont Weitere berufliche Tätigkeiten} \rule[0ex]{\linewidth}{0.4pt}}
+
         \begin{justify}
         \setlength{\parindent}{0pt}
         \faBuilding{} {\normalsize \textbf{Event Probat}} \\[1ex]
@@ -408,7 +406,9 @@
         \faIndustry{} {\normalsize \textbf{Frankenberg}} \\[1ex]
         \jobevent{Würselen}{Jul 2012}{Okt 2014}{Aushelfer}{6.4cm} \\
         \faGopuram{} {\normalsize \textbf{NAJA}} \\[1ex]
-        \jobevent{Teheran}{Aug 2009}{Feb 2011}{Wehrdienst}{6.cm}
+        \jobevent{Teheran}{Aug 2009}{Feb 2011}{Wehrdienst}{6.cm} \\
+        \vspace{+2pt}
+        \end{justify}
 
 %        \faM{\scshape\fontseries{light}\selectfont\footnotesize Acme Corp \qquad 2017} \\
 %        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Tincidunt praesent semper feugiat nibh sed pulvinar. Tristique nulla aliquet enim tortor at auctor. \\[1ex]
@@ -452,9 +452,9 @@
 %        {\scshape\fontseries{light}\selectfont\footnotesize Sample Uni \qquad 2023} \\
 %        met aliquam id diam maecenas ultricies mi eget. Viverra maecenas accumsan lacus vel facilisis volutpat. Tortor condimentum lacinia quis vel eros donec ac odio tempor. Ultricies lacus sed turpis tincidunt id aliquet risus. \\[1ex]
 %        Skill 1, Skill 2, Skill 3, \LaTeX
-        \end{justify}
+
         \vfill%
-        {\hfill\small\fontseries{extralight}\selectfont Page \thepage of \pageref{LastPage}\hfill}
+        {\hfill\small\fontseries{extralight}\selectfont Seite \thepage\, von \pageref{LastPage}\hfill}
     \end{minipage}
 }
 \hfill%
@@ -465,16 +465,18 @@
         %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
         % YOUR NAME AND PREFERED PRONOUS AGAIN AS HEADER
         {\bfseries\scshape\HUGE Morteza} \\
-        {\bfseries\scshape\Huge Montahaee} \qquad {they/them}
+        {\bfseries\scshape\huge Monthaee} \qquad {\large\textbf{ Lebenslauf}}
         \vspace{.3cm} \\
         %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
         % LANGUAGES
         \phantomsection
         \addcontentsline{toc}{section}{Languages}
-        \section*{\large Languages}
+        \section*{\large Sprachen}
         \begin{tabular}{cl}
-            \faLanguage{} & Lorem ipsum (Mothertounge) \\
-            \faLanguage{} & English (Fluent)
+            \faLanguage{} & Deutsch (Verhandlungssicher) \\
+            \faLanguage{} & English ({\fontsize{9.25}{12}\selectfont Flie\ss end in Wort und Schrift}) \\
+            \faLanguage{} & Persisch (Muttersprache) \\
+            \faLanguage{} & Arabisch ({\fontsize{9.25}{12}\selectfont Erweiterte Grundkenntnisse})
         \end{tabular}
         \vspace{.3cm}
         \\
@@ -484,16 +486,26 @@
         % CERTIFICATES AND AWARDS RECEIVED
         \phantomsection
         \addcontentsline{toc}{section}{Certificates and Prizes}
-        \section*{\large Certificates and Prizes}
-        \begin{tabularx}{\textwidth}{cY}
-            2010 & Etiam tempor orci eu \\
-            2010 & Quam nulla porttitor massa \textemdash{} 3\textsuperscript{rd} place \\
-            2011 & Quis imperdiet massa tincidunt \textemdash{} 3\textsuperscript{rd} place \\
-            2016 & Vestibulum sed arcu non odio euismod \\
-            2016 & Non enim praesent elementum facilisis \\
-            2016 & Blandit libero volutpat sed cras \\
-            2016 & Eget dolor morbi non arcu \\
-        \end{tabularx}
+        \section*{\large Interesse}
+%        \begin{tabularx}{\textwidth}{cY}
+%%            2010 & Etiam tempor orci eu \\
+%%            2010 & Quam nulla porttitor massa \textemdash{} 3\textsuperscript{rd} place \\
+%%            2011 & Quis imperdiet massa tincidunt \textemdash{} 3\textsuperscript{rd} place \\
+%%            2016 & Vestibulum sed arcu non odio euismod \\
+%%            2016 & Non enim praesent elementum facilisis \\
+%%            2016 & Blandit libero volutpat sed cras \\
+%%            2016 & Eget dolor morbi non arcu \\
+%            & Variationsrechnung     \\
+%            & Differenzialgeometrie  \\
+%            & Data Science            \\
+%            & Design Patterns         \\
+%        \end{tabularx}
+        \begin{tabular}{cl}
+            \includegraphics[width=1.25em]{square-root-variable-solid} & Variationsrechnung \\
+            \includegraphics[width=1.25em]{geometry_1} & Differenzialgeometrie \\
+            \includegraphics[width=1.25em]{chart-line-solid} & Data Science \\
+            \includegraphics[width=1.25em]{rangoli} & Design Patterns \\
+        \end{tabular}
         \vspace{.3cm}
         \\
         \rule{\linewidth}{0.4pt}
@@ -503,10 +515,13 @@
         % Change Icons here https://packages.oth-regensburg.de/ctan/fonts/fontawesome5/doc/fontawesome5.pdf
         \phantomsection
         \addcontentsline{toc}{section}{Hobbies}
-        \section*{\large Hobbies}
+        \section*{\large Hobbys}
         \begin{tabularx}{\textwidth}{cY}
-            \faCamera{} & Fringilla \\
-            \faCogs{} & Id eu nisl nunc mi ipsum \\
+            \includegraphics[width=1.25em]{wrestling1} & Ringen \\
+            \includegraphics[width=1.25em]{football} & Fu\ss ball \\
+            \includegraphics[width=1.25em]{hiking} & Wandern \\
+            \includegraphics[width=1.25em]{history_scroll} & Geschichte \\
+            \includegraphics[width=1.275em]{math2} & Mathematik \\
         \end{tabularx}
         \vspace{.3cm}
         \\
