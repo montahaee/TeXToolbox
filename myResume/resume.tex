@@ -85,7 +85,8 @@
     pdftitle={Morteza Montahaee - CV - English/German},
     pdfauthor={Morteza Montahaee},
     pdfsubject={CV},
-    pdftitle={Mein CV erstellt mit LaTeX}
+    pdftitle={Mein CV erstellt mit LaTeX},
+%    pdfpagemode=FullScreen,
 }
 
 % Paper size
@@ -155,6 +156,11 @@
     \href{#1}{\raisebox{{#3}ex}{\hspace{{#4}em}\rotatebox{#5}{\scalebox{#2}{\faExternalLink}}}}%
 }
 
+\newcommand{\internallink}[5]{%
+    \href{#1}{\raisebox{{#3}ex}{\hspace{{#4}em}\rotatebox{#5}{\includegraphics[width={#2}em]{internalLink}}}%
+    }
+}
+
 
 % a six pointed arrow poiting to the left
 \newcommand{\tzlarrow}{(0,0) -- (0.2,0) -- (0.3,0.2) -- (0.2,0.4) -- (0,0.4) -- (0.1,0.2) -- cycle;}
@@ -177,6 +183,7 @@
     & \larrow{bgcol}  #1\\ [3pt]
     \end{tabular*}
 }
+%\pdfpageattr{/AA << /O << /S /JavaScript /JS (this.zoom = 125) >> >>}
 
 \begin{document}
 \setlength{\topskip}{0pt}\setlength{\footskip}{0pt}%
@@ -200,7 +207,7 @@
         %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
         % YOUR PERSONAL INFROMATION
         \phantomsection{}
-        \addcontentsline{toc}{section}{Personal info}
+        \addcontentsline{toc}{section}{Kontakte} % Personal info
         \section*{\Large Kontakte}
         \begin{tabularx}{\textwidth}{cY}
             \faPhone{}      & \href{tel:+49 176 703 552 53}{+49 176 703 552 53} \\
@@ -263,10 +270,11 @@
 
         \vfill
 %        {\tiny GPA: (1) very good $\approx$91\%-100\%, (2) good $\approx$81\%-90\%, (3) satisfactory $\approx$66\%-80\%, (4) sufficient $\approx$50\%-65\%, (5) failed $\approx$0\%-49\%}
+        \phantomsection{}
         \begin{center}
-            {\tiny GPA: (18-20) sehr gut $\approx$90\%-100\%, (15-17) gut $\approx$80\%-89\%, (12-14) befriedigend $\approx$70\%-79\%, (10-12) ausreichend $\approx$60\%-69\%, (0-9) mangelhaft $\approx$0\%-59\%}
+            {\tiny \textbf{GPA}: (18-20) sehr gut $\approx$90\%-100\%, (15-17) gut $\approx$80\%-89\%, (12-14) befriedigend $\approx$70\%-79\%, (10-12) ausreichend $\approx$60\%-69\%, (0-9) mangelhaft $\approx$0\%-59\%\label{ft:gpasystem}}
 %            \href{https://en.wikipedia.org/wiki/Academic_grading_in_Iran}{\scalebox{0.72}{\faExternalLink}}
-            \externallink{https://en.wikipedia.org/wiki/Academic_grading_in_Iran}{0.52}{0.95}{-0.5}{0}
+            \externallink{https://en.wikipedia.org/wiki/Academic_grading_in_Iran}{0.72}{0.25}{-0.15}{0}
         \end{center}
     \end{minipage}
 }
@@ -274,11 +282,12 @@
 \fcolorbox{red}{mainbg}{%
     \begin{minipage}[t][\dimexpr\textheight-2\fboxrule-2\fboxsep\relax][t]{\dimexpr0.6\textwidth-2\fboxrule-2\fboxsep\relax}
         \color{maintext}
+        \vspace{3pt}
         %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
         % EDUCATION
         \phantomsection{}
-        \addcontentsline{toc}{section}{Education}
-        \section*{\scshape\Large Ausbildung \rule{\linewidth}{0.4pt}} \vspace{-3pt}
+        \addcontentsline{toc}{section}{Ausbildung} %Education/Ausbildung
+        \section*{\scshape\Large Ausbildung \rule{\linewidth}{0.4pt}} \vspace{-7pt}
 %
         {\large \textbf{Angewandte Mathematik und Informatik (\href{https://montahaee.github.io/assets/pdf/de/apply/Abschlussbescheinigung.pdf}{\textcolor{cyan!60!black}{\fontsize{11.15pt}{13pt}\selectfont Abschluss{\externallink{}{0.62}{1.25}{-0.43}{10}}}})}} \\[1ex]
         \faUniversity{} FH Aachen, University of Applied Sciences \\
@@ -288,12 +297,12 @@
         {Studiengang}{Bachelor of Science}{.1cm}
         {Note: 2.7} \\[0ex]
 %        {\footnotesize Subsidiary subject: Psychology} \\
-        {\footnotesize Schwerpunkt: Analysis, Lineare Algebra, Stochastik, Numerik, Algorithmen und Datenstrukturen, Data Science, Datenbanken, Softwaretechnik} \\
+        {\footnotesize \textbf{Schwerpunkt}: Analysis, Lineare Algebra, Stochastik, Numerik, Algorithmen und Datenstrukturen, Data Science, Datenbanken, Softwaretechnik} \\
         {\footnotesize \href{https://montahaee.github.io/assets/pdf/de/projects/myFH_Bachelorthesis.pdf}{\textcolor{cyan!70!black}{Bachelorarbeit\externallink{}{0.62}{1.35}{-0.3}{0}}}: Datengetriebene äu\ss{}ere Differentialrechnung auf Graphen zur Diskretisierung von elliptischen partiellen Differentialgleichungen} \\[2ex]
 
         {\large \textbf{Mathematik (Ohne Abschluss)}} \\[1ex]
         \faUniversity{} RWTH University \\
-        \eduevent{Aachen}{Okt 2012}{Okt 2016}
+        \eduevent{Aachen}{Okt 2012}{Sep 2019}
         {Studiengang}{Master of Science}{.1cm}  \vspace{-10pt}
         {} \\
         {\footnotesize Abgschlossene Module: \href{https://montahaee.github.io/assets/pdf/de/apply/bild\_verarbeitung\_zeugnis.pdf}{\textcolor{cyan!70!black}{Bildverarbeitung{\externallink{}{0.62}{1.25}{-0.33}{10}}}}, \href{https://montahaee.github.io/assets/pdf/de/apply/neuro_science.pdf}{\textcolor{cyan!70!black}{Neuroscience{\externallink{}{0.62}{1.25}{-0.33}{10}}}}, Numerik (PDE),
@@ -311,14 +320,14 @@
         {\large \textbf{Angewandte Mathematik (\href{https://montahaee.github.io/assets/pdf/en/apply/bsc_degree.pdf}{\textcolor{cyan!60!black}{Abschluss{\externallink{}{0.62}{1.25}{-0.3}{0}}}})}} \\
         \faUniversity{} \href{https://en.wikipedia.org/wiki/Payame_Noor_University}{\textcolor{green!30!black}{Payame Noor}} University{\textcolor{green!30!black}{\externallink{https://en.wikipedia.org/wiki/Payame_Noor_University}{0.82}{1.25}{-0.23}{0}}}
         \eduevent{Pakdasht}{Okt 2005}{Jul 2009}{Studiengang}{Bachelor of Science}{.1cm}
-        {Note: 15.54} \\[1ex]
-        {\footnotesize Schwerpunkt: Lineare/ Algebra, Numerische (ODE) und Mathematische Analysis, Mathematische Statistik, Graphentheorie, Mathematische Modelle der Natur (ODE)} \\
+        {Note: 15.54\hyperref[ft:gpasystem]{\textcolor{cyan!60!black}{$^{\text{\tiny \textbf{GPA}}}$\internallink{}{.75}{-1.05}{-.95}{0}}}} \\[1ex]
+        {\footnotesize \textbf{Schwerpunkt}: Lineare/ Algebra, Numerische (ODE) und Mathematische Analysis, Mathematische Statistik, Graphentheorie, Mathematische Modelle der Natur (ODE)} \\
         {\footnotesize Bachelorarbeit: Anwendung Nichtlinear Konjugierte Gradient-Algorithmen zur Abschätzung elektromagnetischer Inversion} \\[2ex]
          \vspace{+2pt}
         %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
         % WORK EXPERIENCE
         \phantomsection{}
-        \addcontentsline{toc}{section}{Work Experience}
+        \addcontentsline{toc}{section}{Berufliche Erfahrung}   % Work Experience
         \section*{\scshape\Large Berufliche Erfahrung \rule{\linewidth}{0.4pt}} \vspace{-7pt}
 %
         \faUniversity{} {\large \textbf{\href{https://dap-aachen.de/}{
@@ -333,7 +342,7 @@
 %            \begin{itemize}
                 \item[\larrow{bgcol}]\href{https://montahaee.github.io/assets/pdf/en/projects/praxisbericht2_morteza_montahaee_signed.pdf}{\textcolor{darkgreen!70!red}{Entwicklung{{\externallink{}{0.62}{1.25}{-0.43}{0}}}}}einer \href{https://plm.sw.siemens.com/de-DE/nx/}{\textcolor{cyan!70!black}{NX{\textcolor{cyan!70!black}{\externallink{https://plm.sw.siemens.com/de-DE/nx/}{0.62}{1.55}{-0.43}{0}}}}}CAD Bibliothek zur Generierung von Lattice
                 in C\#, wodurch die Effizienz der Datentransfers und die Leistungsfähigkeit bei der Verarbeitung komplexer Strukturen verbessert wurden
-                \item[\larrow{bgcol}]\href{https://montahaee.github.io/assets/pdf/en/projects/praxisbericht1_morteza_montahaee_signed.pdf}{\textcolor{darkgreen!70!red}{Entwurf{{\externallink{}{0.62}{1.65}{-0.33}{10}}}}}von Workflow-Management additiver Prozesse (\href{https://dap-aachen.de/2022-06-22-idam}{\textcolor{cyan!70!black}{IDAM\externallink{}{0.62}{1.65}{-0.33}{0}}}) mit Enterprise Architect (\href{https://sparxsystems.com/}{\textcolor{cyan!70!black}{EA\externallink{}{0.62}{1.5}{-0.33}{0}}}) zur präziseren Prozesssteuerung und verbesserten Nachvollziehbarkeit
+                \item[\larrow{bgcol}]\href{https://montahaee.github.io/assets/pdf/en/projects/praxisbericht1_morteza_montahaee_signed.pdf}{\textcolor{darkgreen!70!red}{Entwurf{{\externallink{}{0.62}{1.65}{-0.33}{0}}}}}von Workflow-Management additiver Prozesse (\href{https://dap-aachen.de/2022-06-22-idam}{\textcolor{cyan!70!black}{IDAM\externallink{}{0.62}{1.65}{-0.33}{0}}}) mit Enterprise Architect (\href{https://sparxsystems.com/}{\textcolor{cyan!70!black}{EA\externallink{}{0.62}{1.5}{-0.33}{0}}}) zur präziseren Prozesssteuerung und verbesserten Nachvollziehbarkeit
                 \item[\larrow{bgcol}] \href{https://montahaee.github.io/assets/pdf/de/apply/recommandation_letter.pdf}{\textcolor{darkgreen!70!red}{Beteiligung{{\externallink{}{0.62}{1.25}{-0.33}{0}}}}} an der Entwicklung von Forschungsdatenmodellen mit Python (auf \href{https://www.itc.rwth-aachen.de/cms/it-center/services/forschung/~smhwy/coscine/}{\textcolor{cyan!70!black}{{Coscine{\externallink{}{0.62}{1.25}{-0.33}{0}}}}}), was die Effizienz und Konsistenz bei der Verwaltung gro\ss er wissenschaftlicher Datensätze erhöhte
                 \item[\larrow{bgcol}]Unterstützung der Firma MAT.TRAFFIC GmbH im Rahmen einer MATSE \href{https://blog.rwth-aachen.de/itc/en/2017/04/12/software-engineering-messe-der-matse2015} {\textcolor{cyan!70!black}{Projektarbeit\externallink{}{0.62}{1.5}{-0.33}{0}}}in Python: Geo-Erkennung von Kreuzungen für intelligente Verkehrssysteme und Stadtplanung mithilfe der Metadaten von OpenStreetMap(\href{https://www.openstreetmap.org/}{\textcolor{cyan!70!black}{OSM\externallink{}{0.62}{1.5}{-0.33}{0}}}), was zur Automatisierung der Erkennung urbaner Kreuzungen und zur Verbesserung der Planungsprozesse beitrug
             \end{itemize}
@@ -382,19 +391,19 @@
 \fcolorbox{red}{mainbg}{%
     \begin{minipage}[t][\dimexpr\textheight-2\fboxrule-2\fboxsep\relax][t]{\dimexpr0.6\textwidth-2\fboxrule-2\fboxsep\relax}
         \color{maintext}
-         \vspace{.6cm}
+         \vspace{.2cm}
         %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
         % PROFILE
         \phantomsection{}
-        \addcontentsline{toc}{section}{Profile}
-        \section*{\scshape{\fontsize{12.65}{15}\selectfont Profile} \rule{\linewidth}{0.4pt}}
+        \addcontentsline{toc}{section}{Profil} % Profile
+        \section*{\scshape{\fontsize{12.65}{15}\selectfont Profil} \rule{\linewidth}{0.4pt}}
 
         Absolvent in Angewandter Mathematik und Informatik mit umfangreicher Erfahrung in der Softwareentwicklung mit einem Fokus auf \href{https://de.wikipedia.org/wiki/Geometrische_Modellierung#Generative_Modellierung}{\textcolor{cyan!70!black}{Generative{\externallink{}{0.62}{.75}{0.08}{10}}}} Modellierung, Datenbankmanagement, Data Science und Webentwicklung. Leidenschaft für mathematische Methoden zur Lösung komplexer Probleme und ihrer Implementierung möglichst nach \href{https://de.wikipedia.org/wiki/Entwurfsmuster}{\textcolor{cyan!70!black}{Entwurfsmuster{\externallink{}{0.62}{1.25}{-0.73}{10}}}}prinzipien.
         \vspace{.75cm}
         %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
         % PROJECTS /other activities
         \phantomsection
-        \addcontentsline{toc}{section}{Further Work Experience}
+        \addcontentsline{toc}{section}{Weitere berufliche Tätigkeiten}   % Further Work Experience
 %        \section*{\scshape\Large Weitere berufliche Tätigkeiten \rule{\linewidth}{0.4pt}}
 %        \section*{\scshape\large Weitere berufliche Tätigkeiten \rule[0ex]{3.475cm}{0.4pt}}
         \section*{\scshape{\fontsize{12.65}{15}\selectfont Weitere berufliche Tätigkeiten} \rule[0ex]{\linewidth}{0.4pt}}
@@ -470,7 +479,7 @@
         %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
         % LANGUAGES
         \phantomsection
-        \addcontentsline{toc}{section}{Languages}
+        \addcontentsline{toc}{section}{Sprachen} %  Languages
         \section*{\large Sprachen}
         \begin{tabular}{cl}
             \faLanguage{} & Deutsch (Verhandlungssicher) \\
@@ -483,9 +492,9 @@
         \rule{\linewidth}{0.4pt}
         \\
         %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-        % CERTIFICATES AND AWARDS RECEIVED
+        % CERTIFICATES AND AWARDS RECEIVED or any other things that you find important
         \phantomsection
-        \addcontentsline{toc}{section}{Certificates and Prizes}
+        \addcontentsline{toc}{section}{Interesse}   % Certificates and Prizes
         \section*{\large Interesse}
 %        \begin{tabularx}{\textwidth}{cY}
 %%            2010 & Etiam tempor orci eu \\
@@ -514,7 +523,7 @@
         % HOBBIES
         % Change Icons here https://packages.oth-regensburg.de/ctan/fonts/fontawesome5/doc/fontawesome5.pdf
         \phantomsection
-        \addcontentsline{toc}{section}{Hobbies}
+        \addcontentsline{toc}{section}{Hobbys}  % Hobbies
         \section*{\large Hobbys}
         \begin{tabularx}{\textwidth}{cY}
             \includegraphics[width=1.25em]{wrestling1} & Ringen \\
