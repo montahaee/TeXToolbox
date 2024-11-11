@@ -1,0 +1,53 @@
+% Edit the following
+
+% language
+\newcommand{\mylanguage}{ngerman} % Your writting language (e.g. english, ngerman)
+
+% Header setting
+\newcommand{\mypdftitle}{Motivationsschreiben, erstellt mit \LaTeX} % Your pdf title in the header (e.g. en. "Created by LaTex" de. "Erstellt mit LaTex")
+
+% Personal information
+\newcommand{\myname}{Morteza Montahaee} % Your name (e.g. "John Smith")
+\newcommand{\mytitle}{Bewerber} % Your title (e.g. "Applicant")
+\newcommand{\myemail}{morteza.montahaee@rwth-aachen.de} % Your email (e.g. "me@mydomain.com")
+\newcommand{\myweb}{montahaee} % Your web address with out topl level domain (TLD)
+\newcommand{\mytld}{github.io} % Your TLD
+\newcommand{\myphone}{+49 176 7035 5253} % Your phone number (e.g. "123.456.7890")
+\newcommand{\mylocation}{Ottostr.19, Aachen} % Your general location (e.g. "PNW, USA")
+\newcommand{\recipient}{Frau Anna Efimova} % The recipient (e.g. en. "Max Mustermann" , de.  "r Max Mustermann" or "Marie Mustermann" or "Damen und Herren")
+\newcommand{\contactPers}{Frau Efimova}
+\newcommand{\greeting}{Sehr geehrte} % The greeting to use (e.g. en. "Dear", de. "Sehr geehrte")
+\newcommand{\closer}{Mit freundlichen Grüßen} % The closer to use (e.g. "Kind Regards")
+
+% Company information
+\newcommand{\company}{Bundesnetzagentur} % The company (e.g. "Microsoft Corporation")
+\newcommand{\street}{Tulpenfeld 4} % The company's street address (e.g. "1 Microsoft Way")
+\newcommand{\city}{Bonn} % The company's city (e.g. "Redmond")
+\newcommand{\state}{Deutschland} % The company's state prefix (e.g. "WA")
+\newcommand{\zip}{53113} % The company's zip code (e.g. "98052")
+\newcommand{\application}{Bewerbung als} % Apply on
+\newcommand{\job}{Analyst für Energie-Stammdaten}
+
+% Date format
+
+
+\DTMnewdatestyle{englishformat}{
+  \renewcommand{\DTMdisplaydate}[4]{\DTMenglishmonthname{##2}~##3,~##1} % Month Day, Year
+}
+
+\DTMnewdatestyle{germanformat}{
+  \renewcommand{\DTMdisplaydate}[4]{##3.~\DTMgermanmonthname{##2}~##1} % Day. Monthname Year
+}
+
+\newcommand{\myenglishformat}{\DTMsetdatestyle{englishformat}\DTMdisplaydate{\the\year}{\the\month}{\the\day}{-}}
+\newcommand{\mygermanformat}{\DTMsetdatestyle{germanformat}\DTMdisplaydate{\the\year}{\the\month}{\the\day}{-}}
+
+\newcommand{\setmydate}{%
+  \iflanguage{english}{%
+    \myenglishformat%
+  }{%
+    \iflanguage{ngerman}{%
+      \mygermanformat%
+    }{}%
+  }%
+}

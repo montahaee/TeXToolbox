@@ -1,0 +1,132 @@
+% Project:  TeX Cover Letter Template
+% Author:   NO Body
+
+% EDIT info.tex, body.tex
+
+% \documentclass[12pt]{letter}
+% \documentclass[11pt]{letter}
+\documentclass[11pt, a4paper]{letter}
+% \usepackage{extsizes}
+% \usepackage{anyfontsize}
+% \fontsize{11.5pt}{13.8pt}\selectfont
+
+% \RequirePackage{fontawesome}
+\usepackage[utf8]{inputenc}
+% \usepackage{background}
+\usepackage{float}
+\usepackage[empty]{fullpage}
+\usepackage[hidelinks]{hyperref}
+\usepackage{graphicx}
+\usepackage{fontawesome5}
+\usepackage{tikz}
+\usepackage{eso-pic}
+\usepackage{charter}
+\usepackage{xcolor}
+\usepackage{microtype}
+\usepackage[english,german]{babel}
+% \usepackage[english,ngerman]{babel}
+\usepackage[defaultsans]{droidsans}
+\useshorthands{"}
+\addto\extrasngerman{\languageshorthands{none}}
+\usepackage[useregional]{datetime2}
+
+\addtolength{\topmargin}{-0.5in}
+\addtolength{\textheight}{1.0in}
+\definecolor{gr}{RGB}{225,225,225}
+
+\definecolor{mainbg}{cmyk}{0, 0, 0.07, 0.04}
+
+
+\input{info}
+
+\hypersetup{
+    colorlinks=false, % Set to true if you like the color link.
+    linkcolor=blue,
+    filecolor=magenta,      
+    urlcolor=cyan,
+    pdftitle={\mypdftitle},
+    pdfpagemode=FullScreen,
+    }
+
+% \pagecolor{mainbg}
+% Shaded header banner
+\AddToShipoutPictureBG{%
+    \color{gr!85!mainbg}
+    \AtPageUpperLeft{\rule[-1.05in]{\paperwidth}{1.05in}}
+}
+\begin{document}
+% Selecting language from info
+\expandafter\selectlanguage\expandafter{\mylanguage}
+% Add gradient background, starting below the header box
+\begin{tikzpicture}[remember picture, overlay]
+    \shade[left color=mainbg, right color=white] 
+    ([yshift=-2.675cm]current page.north west) rectangle (current page.south east);
+\end{tikzpicture}
+% Selecting language from info
+% \vspace*{-10pt}
+% Header
+\parbox{\textwidth}{
+\begin{center}
+\vspace{-10pt}
+{\fontsize{28}{0}\selectfont\scshape \myname}
+
+{\fontsize{9.015}{11}\selectfont
+
+\href{mailto:\myemail}{\faEnvelope\enspace {\myemail}}\quad
+% \href{mailto:\myemail}{\faIcon[regular]{envelope}\enspace {\myemail}}\quad
+% Set your website domain 
+\href{https://\myweb.\mytld}{\faGlobe\enspace \myweb.\mytld}\quad
+\href{tel:\myphone}{\faPhone\enspace \myphone}\quad
+% \faMapMarker\enspace \mylocation}
+\href{https://www.bing.com/maps?q=Otto+str+19+aachen&FORM=AWRE}{\faMapMarker\enspace \mylocation}}
+% \href{https://www.bing.com/search?q=Otto+str+19+aachen&FORM=AWRE}{\faIcon[regular]{map-marker}\enspace \mylocation}}
+\end{center}
+}
+% \vspace{0.5in}
+% \begin{tikzpicture}[remember picture, overlay] \shade[left color=white, right color=mainbg] (current page.south west) rectangle (current page.north east); 
+% \end{tikzpicture}
+\parbox{\textwidth}{
+\vspace{0.35in}
+% \vspace{-0.1in}
+{\fontsize{10.0pt}{11.5pt} \selectfont
+\company\\
+\recipient\\
+\street\\
+% \city, \state\ \zip\\  % Englisch version zip after state
+\zip\, \city, \state\    % German version zip before the city.
+}\\ %\vspace*{-5pt}
+}
+\makebox[\textwidth][s]{\hfill\setmydate}\\
+\textbf{\application\,\job} \\
+
+\vspace{-0.1in}\greeting\ \contactPers,\\
+
+% Body
+% \fontsize{11.1pt}{13.3pt}\selectfont
+% \fontsize{11pt}{13.2pt}\selectfont
+% \fontsize{10.6pt}{12.72pt}\selectfont
+% \fontsize{10.725pt}{12.87pt}\selectfont
+\fontsize{10.55pt}{12.5pt}\selectfont
+\vspace{-0.2in}\setlength\parindent{0pt}
+\noindent\input{body}
+% Closer
+\vspace{0.1in}
+% \vfill
+% }
+\begin{flushleft}
+\closer
+
+\vspace*{0.1in}
+\myname\\
+\parbox{\textwidth}{
+\vspace*{-20pt}
+% \includegraphics[width=1.0in, height=0.51in]{signatur.png}
+% \vspace{5pt}
+\hspace{17pt}\includegraphics[width=.75in, height=0.5in]{unterschrifft.png}
+}
+% \hspace{-80pt}\includegraphics[width=.75in, height=0.5in]{signature.png}
+% \mytitle 
+% Opening block
+% \today\\
+\end{flushleft}
+\end{document}
