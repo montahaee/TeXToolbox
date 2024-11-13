@@ -35,7 +35,16 @@
 \definecolor{gr}{RGB}{225,225,225}
 
 \definecolor{mainbg}{cmyk}{0, 0, 0.07, 0.04}
-
+%\definecolor{darkredgreen1}{rgb}{0.20, 0.80, 0.20}
+\definecolor{darkredgreen1}{cmyk}{0,0.45, 0.45, 0.10}
+\colorlet{darkredgreen}{darkredgreen1!70!orange}
+\definecolor{darkredcyan}{cmyk}{0.15,0.45, 0.35, 0.15}
+\colorlet{darkcyan}{cyan!55!black}
+%\colorlet{darkcyanlegend}{cyan!90!black}
+\colorlet{darkcyanlegend}{darkcyan!70!white}
+\colorlet{darkgreencyan}{darkredgreen!50!darkredcyan}
+\colorlet{darkgreencyanlegend}{darkgreencyan!60!white}
+\colorlet{darkgreen}{green!35!black}
 
 \input{info}
 
@@ -45,9 +54,9 @@
     filecolor=magenta,      
     urlcolor=cyan,
     pdftitle={\mypdftitle},
-    pdfpagemode=FullScreen,
+%    pdfpagemode=FullScreen,
     }
-
+\newcommand{\betiny}{\fontsize{6pt}{7pt}\selectfont}
 % \pagecolor{mainbg}
 % Shaded header banner
 \AddToShipoutPictureBG{%
@@ -83,20 +92,36 @@
 \end{center}
 }
 % \vspace{0.5in}
-% \begin{tikzpicture}[remember picture, overlay] \shade[left color=white, right color=mainbg] (current page.south west) rectangle (current page.north east); 
-% \end{tikzpicture}
+\noindent
+    % Address block on the left
 \parbox{\textwidth}{
-\vspace{0.35in}
-% \vspace{-0.1in}
-{\fontsize{10.0pt}{11.5pt} \selectfont
-\company\\
-\recipient\\
-\street\\
-% \city, \state\ \zip\\  % Englisch version zip after state
-\zip\, \city, \state\    % German version zip before the city.
-}\\ %\vspace*{-5pt}
+    \vspace{0.35in}
+    {\fontsize{10.0pt}{11.5pt} \selectfont
+    \textbf{\company}\\
+    \recipient\\
+    \street\\
+    \zip\, \city, \state\
+    }\\
 }
-\makebox[\textwidth][s]{\hfill\setmydate}\\
+% Right-aligned legend in the margin
+\parbox{\textwidth}{
+    \begin{tikzpicture}[overlay, remember picture]
+        % Position adjustments
+        % Circle 1 - "Sehr Gut"
+        \node at (current page.north east) [xshift=-0.75cm, yshift=-3.25cm] (circle1) {}; % Adjust x/y shifts
+        \draw[fill=darkcyanlegend] (circle1) circle (0.5ex);
+        \node[left] at ([xshift=-0.175cm] circle1) {\betiny Referenz};
+
+        % Circle 2 - "Grun"
+        \node at (current page.north east) [xshift=-0.75cm, yshift=-4.0cm] (circle2) {}; % Adjust x/y shifts
+        \draw[fill=darkgreencyanlegend] (circle2) circle (0.5ex);
+        \node[left] at ([xshift=-0.1cm] circle2) {\betiny Erfahrung};
+        % Vertical text between circles
+        \node[rotate=-90, anchor=center] at ([xshift=0.35cm,yshift=2.1ex] circle2) {\scriptsize Link};
+%        \node[rotate=90, anchor=center, right] at ([xshift=.05cm], $-(circle1)$) {\betiny Knowledge Level};
+    \end{tikzpicture}
+}
+\makebox[\textwidth][l]{\hfill\setmydate}\\
 \textbf{\application\,\job} \\
 
 \vspace{-0.1in}\greeting\ \contactPers,\\
@@ -125,7 +150,7 @@
 \hspace{20pt}\includegraphics[width=.75in, height=0.5in]{unterschrifft}
 }
 % \hspace{-80pt}\includegraphics[width=.75in, height=0.5in]{signature.png}
-% \mytitle 
+% \mytitle today
 % Opening block
 % \today\\
 \end{flushleft}
